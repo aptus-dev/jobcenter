@@ -4,7 +4,7 @@
   "description": "jobcenter.id development",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "start": "node server.js"
   },
   "repository": {
@@ -15,9 +15,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rumjuice/jobcenter/issues"
-  },
-  "scripts": {
-    "test": "expresso test/*"
   },
   "homepage": "https://github.com/rumjuice/jobcenter#readme",
   "dependencies": {
