@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/rumjuice/jobcenter/issues"
   },
+  "scripts": {
+    "test": "expresso test/*"
+  },
   "homepage": "https://github.com/rumjuice/jobcenter#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
