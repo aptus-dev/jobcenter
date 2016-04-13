@@ -1,0 +1,7 @@
+#jumbo.jumbotron {
+    position: relative;
+    background-image: url('../Gallery/photo-jumbo.jpg');
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
