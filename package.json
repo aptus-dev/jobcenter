@@ -26,7 +26,9 @@
     "express-session": "^1.13.0",
     "mongoose": "^4.4.11",
     "morgan": "^1.7.0",
+    "npm-travis": "^1.0.1",
     "passport": "^0.3.2",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "travis-encrypt": "pwmckenna/node-travis-encrypt"
   }
 }
