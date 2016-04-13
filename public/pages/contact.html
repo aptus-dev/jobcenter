@@ -1,0 +1,255 @@
+<!-- index.html -->
+
+    <!DOCTYPE html>
+    <html ng-app="router">
+    <head>
+      <!-- SCROLLS -->
+      <!-- SPELLS -->
+      <!-- load angular and angular route via CDN -->
+
+      <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+      <script type="text/javascript" src="../js/angular.min.js"></script>
+      <script type="text/javascript" src="../js/angular-route.js"></script>
+			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.css">
+      <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"-->
+
+  	<!--NAVBAR style-->
+	     <link rel="stylesheet" href="../css/navbar.css">
+  	<!--FOOTER style-->
+	     <!--link rel="stylesheet" href="./css/footer.css"-->
+
+      <script>
+      document.write('<base href="' + document.location + '" />');
+      </script>
+    </head>
+
+<style>
+
+</style>
+​
+<body>
+	<!---Navbar--->
+	<nav class="navbar navbar-default navbar-fixed-top" id="jobcenter-navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#home">JobCenter</a>
+			</div>
+
+			<div class="collapse navbar-collapse">
+				<ul>
+							<li><a class="btn" href="../index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+							<li><a class="btn" href="../index.html#/search">Cari Pekerja</a></li>
+							<li style="float:right"><a href="#contact">Contact Us</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav><!--END NAVBAR-->
+<div class="container">
+		<br>
+		<br>
+		<br>
+		<div class="container">
+		<h1>Contact Us <small>Tekan salah satu panel untuk melihat detail kantor cabang kami</small></h1>
+		<hr>
+		<br>
+		</div>
+	<div class="container col-md-10 col-md-offset-1">
+		<div class="panel-group" id="accordion">
+	   <div class="panel panel-default">
+	     <div class="panel-heading">
+	       <h4 class="panel-title">
+	         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+	         Jakarta Pusat</a>
+	       </h4>
+	     </div>
+
+	     <div id="collapse1" class="panel-collapse collapse in">
+	       <div class="panel-body">
+					 Alamat:
+					 <br>
+					 No. Telp:
+           <img class="img-responsive" src="../gallery/Kantor Jak.png" alt="Kantor Jak">
+				 </div>
+	     </div>
+	   </div>
+
+	   <div class="panel panel-default">
+	     <div class="panel-heading">
+	       <h4 class="panel-title">
+	         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+	         Jakarta Utara</a>
+	       </h4>
+	     </div>
+	     <div id="collapse2" class="panel-collapse collapse">
+	       <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+	       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+	       commodo consequat.</div>
+	     </div>
+	   </div>
+
+	   <div class="panel panel-default">
+	     <div class="panel-heading">
+	       <h4 class="panel-title">
+	         <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+	         Jakarta Timur</a>
+	       </h4>
+	     </div>
+	     <div id="collapse3" class="panel-collapse collapse">
+	       <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+	       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+	       commodo consequat.</div>
+	     </div>
+	   </div>
+
+		 <div class="panel panel-default">
+	     <div class="panel-heading">
+	       <h4 class="panel-title">
+	         <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+	         Jakarta Selatan</a>
+	       </h4>
+	     </div>
+	     <div id="collapse4" class="panel-collapse collapse">
+	       <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+	       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+	       commodo consequat.</div>
+	     </div>
+	   </div>
+
+		 <div class="panel panel-default">
+	     <div class="panel-heading">
+	       <h4 class="panel-title">
+	         <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+	         Jakarta Barat</a>
+	       </h4>
+	     </div>
+	     <div id="collapse5" class="panel-collapse collapse">
+	       <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+	       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+	       commodo consequat.</div>
+	     </div>
+	   </div>
+
+		 <div class="panel panel-default">
+	     <div class="panel-heading">
+	       <h4 class="panel-title">
+	         <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+	         Bogor</a>
+	       </h4>
+	     </div>
+	     <div id="collapse6" class="panel-collapse collapse">
+	       <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+	       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+	       commodo consequat.</div>
+	     </div>
+	   </div>
+
+		 <div class="panel panel-default">
+	     <div class="panel-heading">
+	       <h4 class="panel-title">
+	         <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+	         Depok</a>
+	       </h4>
+	     </div>
+	     <div id="collapse7" class="panel-collapse collapse">
+	       <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+	       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+	       commodo consequat.</div>
+	     </div>
+	   </div>
+
+		 <div class="panel panel-default">
+	     <div class="panel-heading">
+	       <h4 class="panel-title">
+	         <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+	         Tanggerang</a>
+	       </h4>
+	     </div>
+	     <div id="collapse8" class="panel-collapse collapse">
+	       <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+	       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+	       commodo consequat.</div>
+	     </div>
+	   </div>
+
+		 <div class="panel panel-default">
+	     <div class="panel-heading">
+	       <h4 class="panel-title">
+	         <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+	         Bekasi</a>
+	       </h4>
+	     </div>
+	     <div id="collapse9" class="panel-collapse collapse">
+	       <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+	       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+	       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+	       commodo consequat.</div>
+	     </div>
+	   </div>
+	 </div>
+ </div><!--END PANEL CONTAINER-->
+</div>
+
+	 <div class="container">
+		 <h2>Kontak Kami Langsung</h3>
+		 <hr>
+	 <form action="" class="form-horizontal">
+		 <div class="form-group">
+			 <label for="user-name" class="col-lg-2 control-label" > Name: </label>
+			 <div class="col-lg-6">
+				 <input type="text" class="form-control" id="user-name" placeholder="Enter Your Name">
+			 </div>
+		 </div>
+
+		 <div class="form-group">
+			 <label for="user-email" class="col-lg-2 control-label" > E-mail: </label>
+			 <div class="col-lg-6">
+				 <input type="text" class="form-control" id="user-email" placeholder="Enter Your E-mail Address">
+			 </div>
+		 </div>
+
+		 <div class="form-group">
+			 <label for="user-msg" class="col-lg-2 control-label" > Message: </label>
+			 <div class="col-lg-6">
+				 <textarea name="user-msg" id="user-msg" placeholder="Enter Your Message" class="form-control" cols="15" rows"15"></textarea>
+			 </div>
+		 </div>
+
+		 <div class="form-group">
+			 <div class="col-lg-10 col-lg-offset-2">
+				 <button type="submit" class="btn btn-primary"> Submit </button>
+			 </div>
+		 </div>
+
+	 </form>
+ </div>
+
+<div id="footer">
+  <hr>
+  <div class="container text-center">
+    <ul class="list-inline">
+      <li><a href=""> Twitter </a></li>
+      <li><a href=""> Youtube </a></li>
+      <li><a href=""> Facebook </a></li>
+    </ul>
+  </div>
+  <div class="container text-center">
+  <p> &copy; Copyright @ 2016 </p>
+  </div>
+</div>
+ </body>
+</html>

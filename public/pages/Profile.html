@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html ng-app="dbApp">
+<head>
+
+  <meta charset="utf-8">
+  <title>PROFILE</title>
+  <meta name="description" content="PROFILE">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+<script src="./js/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="./js/bootstrap.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+  <script src="./js/db.js"></script>
+
+<title></title>
+</head>
+<body ng-controller="dbViewController">
+  <!--jumbotron-->
+  <div class="jumbotron text-center">
+    <div class="container">
+      <h1>{{nameData}}</h1>
+       <p>{{typeData}} | {{lokasiData}} | {{statusData}}</p>
+    </div>
+  </div>
+       <hr>
+
+   <div class="container">
+     <section>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-1">
+        </section>
+        <div clas="container">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#Home" data-toggle="tab">Home</a></li>
+              <li><a href="#Skill" data-toggle="tab">Skill</a></li>
+              <li><a href="#Supplier" data-toggle="tab">Supplier</a></li>
+            </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="Home">
+                <div class="panel panel-default panel-info" col-sm-4>
+                  <div class="panel-body">
+                    <p align="left">Eriyanti asal Lampung,siap mengasuh anak balita,jujur,rajin,terampil,
+                       bersertifikat suster,siap kerja hari ini...
+                  </div>
+                    <li class="list-group-item" align="left">Umur {{ageData}} tahun</li>
+                    <li class="list-group-item" align="left">Perlu surat SKCK</li>
+            </div>
+          </div>
+            <div class="tab-pane" id="Skill">
+              <li class="list-group-item" align="left">Memasak</li>
+              <li class="list-group-item" align="left">Mencuci</li>
+            </div>
+            <div class="tab-pane" id="Supplier">
+              <p align="left">my third tab
+            </div>
+      </div>
+    </div>
+  </div>
+    <div class="panel panel-default panel-info">
+      <div class="panel-heading" align="left">
+    <div class="panel-header" align="left">Ditambahkan tanggal 31-03-2016</div>
+    <div class="col-sm-4">
+      <div class="carousel slide" id="screenshot-carousel" data-ride="carousel">
+        <ol class="carousel.indicator">
+           <li data-target="#screenshot-carousel" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="Gallery/gadis_1.jpg" alt="image">
+          </div>
+          <div class="item">
+            <img src="Gallery/gadis_2.jpg" alt="image">
+          </div>
+        </div>
+        <a href="#screenshot-carousel" class="left carousel control" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#screenshot-carousel" class="right carousel control" data-slide="next">
+           <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+  </div>
+</div>
+</div>
+</div><!--end of tab and carousel-->
+
+<hr>
+
+<div class="container">
+  <div class="well">
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-1">
+    </section>
+    <div clas="container">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#Detail" data-toggle="tab">Detail</a></li>
+        </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="Detail">
+            <div class="panel panel-default panel-info" col-sm-4>
+
+                  <table class="table table-stacked">
+                        <tr>
+                            <td align="left">Gaji per bulan :</td>
+                            <td align="left">Rp {{gajiData}}</td>
+                          </tr>
+                          <tr>
+                             <td align="left">Masa Garansi :</td>
+                             <td align="left">3 bulan</td>
+                           </tr>
+                           <tr>
+                             <td align="left">Status :</td>
+                             <td align="left">{{maritalData}}</td>
+                            </tr>
+                        </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#Detail" data-toggle="tab">Profile</a></li>
+      </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="Profil">
+          <div class="panel panel-default panel-info" col-sm-4>
+
+            <table class="table table-stacked">
+                  <tr>
+                      <td align="left">Profesi :</td>
+                      <td align="left">{{typeData}}</td>
+                    </tr>
+                    <tr>
+                       <td align="left">Umur :</td>
+                       <td align="left">{{ageData}} tahun</td>
+                     </tr>
+                     <tr>
+                       <td align="left">Pengalaman :</td>
+                       <td align="left">{{expData}} tahun</td>
+                      </tr>
+                  </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+ <!--end of detail-->
+
+<hr>
+   <div class="container">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Pesan
+    </button>
+    <div class="modal" id="modal-1">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h2 class="modal-title">Register</h2>
+           </div>
+             <div class="modal-body">
+               <form action="" class="form-horizontal">
+         				<div class="form-group">
+         					<label for="user-name" class="col-lg-2 control-label" > Name: </label>
+         					<div class="col-lg-8">
+         						<input type="text" class="form-control" id="user-name" placeholder="Enter Your Name">
+         					</div>
+         				</div>
+         ​
+         				<div class="form-group">
+         					<label for="user-email" class="col-lg-2 control-label" > E-mail: </label>
+         					<div class="col-lg-8">
+         						<input type="text" class="form-control" id="user-email" placeholder="Enter Your E-mail Address">
+         					</div>
+         				</div>
+         ​
+         				<div class="form-group">
+         					<label for="user-address" class="col-lg-2 control-label" > Address: </label>
+         					<div class="col-lg-8">
+         						<input type="text" class="form-control" id="user-address" placeholder="Enter Your Address">
+         					</div>
+         				</div>
+         ​
+         				<div class="form-group">
+         					<label for="user-telp" class="col-lg-2 control-label" > Telephone: </label>
+         					<div class="col-lg-8">
+         						<input type="text" class="form-control" id="user-telp" placeholder="Enter Your Telephone Number">
+         					</div>
+         				</div>
+         ​
+         				<div class="form-group">
+         					<label for="user-msg" class="col-lg-2 control-label" > Message: </label>
+         					<div class="col-lg-8">
+         						<textarea name="user-msg" id="user-msg" placeholder="Enter Your Message" class="form-control" cols="20" rows"10"></textarea>
+         					</div>
+         				</div>
+         ​
+         				<div class="form-group">
+         					<div class="col-lg-10 col-lg-offset-2">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2">Submit
+                    </button>
+                    <div class="modal" id="modal-2">
+                       <div class="modal-dialog">
+                         <div class="modal-content">
+                           <div class="modal-header">
+                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                             <h2 class="modal-title">Congratulations you've been registered</h2>
+                           </div>
+         					</div>
+         				</div>
+         ​
+         			</form>
+         </div>
+         ​</div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+
+</body>
+</html>

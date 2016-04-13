@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Pembokat.com</title>
+	<meta name="description" content="Pembokat.com">	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<script>
+	$('#navbar').scrollspy({offset: 50});
+	</script>
+
+	<script>
+	offsetValue = 40;
+	$('body').data().bs.scrollspy.options.offset = offsetValue;
+	// force scrollspy to recalculate the offsets to your targets
+	$('body').data().scrollspy.process();
+
+	<!-- Icons -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	</script>
+
+</head>
+
+	<style>
+div.groove {border-style: groove;}
+div.sansserif {
+    font-family: Arial, Helvetica, sans-serif;
+}
+div.serif {
+    font-family: "Times New Roman", Times, serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+		font-family: Arial, Helvetica, sans-serif;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: #4CAF50;
+}
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    background-color: white;
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    padding: 2px 2px 2px 2px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+	.carousel-inner > .item > img {
+	  margin: 0 auto;
+		width:70%;
+		height: 60%;
+	}
+	</style>
+
+<body data-spy="scroll" data-target="#pembokat-navbar">
+
+	<!---Navbar--->
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="pembokat-navbar">
+		<div class="container">
+
+				<ul>
+  				<li><a class="active" href="#home"><span class="glyphicon glyphicon-home"></span></a></li>
+  				<li><a href="#news">P.R.T.</a></li>
+  				<li><a href="#contact">General Labor</a></li>
+  				<li><a href="#about">Skilled Labor</a></li>
+					<li><a href="#about">FAQs</a></li>
+					<li><a href="#about">About Us</a></li>
+					<li style="float:right"><a href="#about">Contact Us</a></li>
+				</ul>
+			</div><!--END NAVBAR Collapse-->
+		</div><!--END CONTAINER-->
+	</nav><!--END NAVBAR-->
+
+	<!---JUMBOTRON--->
+	<div class="jumbotron">
+		<div class="container text-center serif">
+			<h1>Pembokat.com</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis augue ipsum, efficitur vel mauris vitae, ullamcorper lacinia purus.
+				Ut at purus efficitur, gravida metus ac, blandit nisl. Ut sodales odio sed volutpat pharetra.
+				Nam dignissim lectus vitae ante suscipit congue. Nunc convallis semper enim, at tristique arcu sollicitudin at.</p>
+			<div class="btn-grp sansserif">
+				<a href="" class="btn btn-lg btn-info">Download App</a>
+				<a href="" class="btn btn-lg btn-warning">Find Your Pembokat Now!</a>
+				<a href="" class="btn btn-lg btn-info">Read Testimonies</a>
+			</div>
+		</div><!--END CONTAINER-->
+	</div><!---END JUMBOTRON--->
+
+<!--google map API-->
+
+	<div class="container text-center">
+	<section>
+		<p> INSERT GOOGLE MAP API HERE </p>
+	</section>
+	</div>
+	<!---Search-->
+	<section>
+		<div class="well">
+				<div class="container text-center groove">
+					<h3>Quick Search</h3>
+		
+					<form action="" class="form-inline">
+						<div class="form-group">
+							<label for="Search">Keyword:</label>
+							<input type="text" class"form-control" id="Search" placeholder="Search Keyword">
+						</div>
+						<div class="form-group">
+							<label for="Search">Location:</label>
+							<input type="text" class"form-control" id="Search" placeholder="Search Location">
+						</div>
+						<button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-search"></span> Search
+        </button>
+					<hr>
+					</form>
+				</div>
+
+
+				<!---FILTER--->
+				<div class="container">
+						<h3 class="text-left">Filter:</h3>
+						<div class="well" style="max-height: 400px;overflow: auto;">
+							<div class="col-xs-3">
+								<div class="form-group">
+								 <label for="sel1">Type:</label>
+								 <select class="form-control" id="sel1">
+									 <option>Select</option>
+									 <option>P.R.T.</option>
+									 <option>General Labor</option>
+									 <option>Skilled Labor</option>
+								 </select>
+							 </div>
+								<div class="form-group">
+								 <label for="sel2">Age (max):</label>
+								 <select class="form-control" id="sel2">
+									 <option>Select</option>
+									 <option>17</option>
+									 <option>18</option>
+									 <option>19</option>
+									 <option>20</option>
+									 <option>21</option>
+									 <option>22</option>
+									 <option>23</option>
+									 <option>24</option>
+									 <option>25</option>
+									 <option>26</option>
+									 <option>27</option>
+									 <option>28</option>
+									 <option>29</option>
+									 <option>30</option>
+									 <option>31</option>
+									 <option>32</option>
+									 <option>33</option>
+									 <option>34</option>
+									 <option>35</option>
+									 <option>36</option>
+									 <option>37</option>
+									 <option>38</option>
+									 <option>39</option>
+									 <option>40</option>
+									 <option>41</option>
+									 <option>42</option>
+									 <option>43</option>
+									 <option>44</option>
+									 <option>45</option>
+									 <option>46</option>
+									 <option>47</option>
+									 <option>48</option>
+									 <option>49</option>
+									 <option>50</option>
+								 </select>
+							 </div>
+
+							 <form><label>Dogs:</label>
+   					 		<input type="radio" name="dogs" value="yes" checked> Yes
+   							<input type="radio" name="dogs" value="no"> No<br>
+ 							</form>
+							<form><label>Masak Babi:</label>
+							 <input type="radio" name="pigs" value="yes" checked> Yes
+							 <input type="radio" name="pigs" value="no"> No<br>
+						 </form>
+
+						</div>
+						<div class="col-xs-3">
+							<div class="form-group">
+							 <label for="sel3">Location:</label>
+							 <select class="form-control" id="sel3">
+								 <option>Select</option>
+								 <option>Jakarta</option>
+								 <option>Bandung</option>
+								 <option>Surabaya</option>
+								 <option>Medan</option>
+								 <option>Semarang</option>
+								 <option>Ambon</option>
+								 <option>Balikpapan</option>
+								 <option>Banda Aceh</option>
+								 <option>Bandar Lampung</option>
+								 <option>Banjarmasin</option>
+								 <option>Batam</option>
+								 <option>Bekasi</option>
+								 <option>Bengkulu</option>
+								 <option>Bogor</option>
+								 <option>Cirebon</option>
+								 <option>Denpasar</option>
+								 <option>Depok</option>
+								 <option>Gorontalo</option>
+								 <option>Jambi</option>
+								 <option>Jayapura</option>
+								 <option>Kediri</option>
+								 <option>Kendari</option>
+								 <option>Madiun</option>
+								 <option>Makassar</option>
+								 <option>Malang</option>
+								 <option>Manado</option>
+								 <option>Padang</option>
+								 <option>Palembang</option>
+								 <option>Pekanbaru</option>
+								 <option>Pontianak</option>
+								 <option>Samarinda</option>
+								 <option>Serang</option>
+								 <option>Tangerang</option>
+								 <option>Tasikmalaya</option>
+								 <option>Tegal</option>
+								 <option>Yogyakarta</option>
+							 </select>
+						 </div>
+							<div class="form-group">
+							 <label for="sel4">Wage(per month):</label>
+							 <select class="form-control" id="sel4">
+								 <option>Select</option>
+								 <option>Rp 1,000,000</option>
+								 <option>Rp 1,100,000</option>
+								 <option>Rp 1,200,000</option>
+								 <option>Rp 1,300,000</option>
+								 <option>Rp 1,400,000</option>
+								 <option>Rp 1,500,000</option>
+								 <option>Rp 1,600,000</option>
+								 <option>Rp 1,700,000</option>
+								 <option>Rp 1,800,000</option>
+								 <option>Rp 1,900,000</option>
+								 <option>Rp 2,000,000</option>
+								 <option>Rp 2,100,000</option>
+								 <option>Rp 2,200,000</option>
+								 <option>Rp 2,300,000</option>
+								 <option>Rp 2,400,000</option>
+								 <option>Rp 2,500,000</option>
+								 <option>Rp 2,600,000</option>
+								 <option>Rp 2,700,000</option>
+								 <option>Rp 2,800,000</option>
+								 <option>Rp 2,900,000</option>
+								 <option>Rp 3,000,000</option>
+								 <option>Rp 3,100,000</option>
+								 <option>Rp 3,200,000</option>
+								 <option>Rp 3,300,000</option>
+								 <option>Rp 3,400,000</option>
+								 <option>Rp 3,500,000</option>
+							 </select>
+						 </div>
+
+						<form><label>English Speaking:</label>
+ 						 <input type="radio" name="english" value="yes" checked> Yes
+ 						 <input type="radio" name="english" value="no"> No<br>
+ 					  </form>
+						<form><label>Kerja Luar Negeri:</label>
+						 <input type="radio" name="luarnegeri" value="yes" checked> Yes
+						 <input type="radio" name="luarnegeri" value="no"> No<br>
+					 </form>
+
+					</div>
+					<div class="col-xs-3">
+						<div class="form-group">
+						 <label for="sel5">Experience (min):</label>
+						 <select class="form-control" id="sel5">
+							 <option>Select</option>
+							 <option>1-3 Years</option>
+							 <option>3-5 Years</option>
+							 <option>5-8 Years</option>
+							 <option>8-10 Years</option>
+							 <option>10+ Years</option>
+						 </select>
+					 </div>
+						<div class="form-group">
+						 <label for="sel6">Religion:</label>
+						 <select class="form-control" id="sel6">
+							 <option>Select</option>
+							 <option>Islam</option>
+							 <option>Katolik</option>
+							 <option>Kristen</option>
+							 <option>Hindu</option>
+							 <option>Budha</option>
+							 <option>Lainnya</option>
+						 </select>
+					 </div>
+
+					 <form><label>Married:</label>
+ 					 <input type="radio" name="married" value="yes" checked> Yes
+ 					 <input type="radio" name="married" value="no"> No<br>
+ 					</form>
+ 					<form><label>Children:</label>
+ 					 <input type="radio" name="children" value="yes" checked> Yes
+ 					 <input type="radio" name="children" value="no"> No<br>
+ 				 </form>
+
+				</div>
+				<div class="col-xs-3">
+					<div class="form-group">
+					 <label for="sel7">Pendidikan Terakhir:</label>
+					 <select class="form-control" id="sel7">
+						 <option>Select</option>
+						 <option>SD</option>
+						 <option>SMP</option>
+						 <option>SMA</option>
+						 <option>Perguruan Tinggi</option>
+					 </select>
+				 </div>
+				<br><br><br>
+
+				<form><label>Stay at Home:</label>
+				 <input type="radio" name="stay" value="yes" checked> Yes
+				 <input type="radio" name="stay" value="no"> No<br>
+				</form>
+				<form><label>Allergy:</label>
+				 <input type="radio" name="allergy" value="yes" checked> Yes
+				 <input type="radio" name="allergy" value="no"> No<br>
+				 <input type="text" name="search" placeholder="If yes, please specify">
+			 </form>
+			</div>
+
+			<div class="col-xs-6">
+				 <label for="sel8">Keterampilan:</label><br>
+				 <form>
+					 <input type="checkbox" name="keterampilan1" value="1">1
+					 <input type="checkbox" name="keterampilan2" value="2">2
+				 </form>
+			</div>
+			<div class="col-xs-6">
+				 <label for="sel9">Bekerja Dimana:</label><br>
+				 <form>
+					 <input type="checkbox" name="dimana1" value="1">1
+					 <input type="checkbox" name="dimana2" value="2">2
+				 </form>
+			</div>
+
+					</div>
+					<a href="#" class="btn btn-info btn-lg">
+					<span class="glyphicon glyphicon-filter"></span> Filter
+					</a>
+		</div>
+		<!--END Filter-->
+
+	</section><!--END Search-->
+
+	<!---PRT--->
+	<div class="container">
+		<section>
+			<div class="page-header" id="PRT">
+				<hr>
+				<h2>Search Results...</h2>
+			</div>
+	<div class="input-group">
+		<span class="input-group-addon"> Filter </span>
+		<input id="filter" type="text" class="form-control" placeholder="Type here...">
+	</div>
+		<table class="table table-striped table-bordered" width="80%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Profession</th>
+								<th>Age</th>
+                <th>Experience</th>
+                <th>Pendidikan</th>
+                <th>Suku Asal</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot >
+            <tr>
+								<th>Name</th>
+								<th>Profession</th>
+								<th>Age</th>
+								<th>Experience</th>
+								<th>Pendidikan</th>
+								<th>Suku Asal</th>
+								<th>Salary</th>
+            </tr>
+        </tfoot>
+				<tbody class="searchable">
+            <tr>
+                <td>Tiger Uppercut</td>
+                <td>PRT</td>
+                <td>17</td>
+                <td>5</td>
+                <td>SMP</td>
+                <td>Jawa</td>
+							  <td>2.400.000</td>
+            </tr>
+						<tr>
+								<td>Tiger Knee</td>
+								<td>General Labor</td>
+								<td>34</td>
+								<td>12</td>
+								<td>S2</td>
+								<td>Ambon</td>
+								<td>2.800.000</td>
+						</tr>
+					</tbody>
+			</table>
+		</section>
+	</div><!--END PRT-->
+	<!---Call to ACtion-->
+	<section>
+		<div class="well">
+				<div class="container text-center groove">
+					<h3>Subscribe for more information</h3>
+					<p>Enter your name and email</p>
+					<form action="" class="form-inline">
+						<div class="form-group">
+							<label for="Subscription">Subscribe:</label>
+							<input type="text" class"form-control" id="subscription" placeholder="Your Name">
+						</div>
+						<div class="form-group">
+							<label for="Subscription">Email Address:</label>
+							<input type="text" class"form-control" id="email" placeholder="Your Email">
+						</div>
+						<button type="submit" class="btn btn-default">Subscribe</button>
+						<hr>
+					</form>
+				</div><!--END Container-->
+		</div><!--END WELL-->
+	</section><!--END CALL TO ACTION-->
+<!--Testimonials-->
+	<div class="container">
+		<div class="page-header" id="Testimonials">
+			<hr>
+			<h2>Testimonials    <small> See what our clients have to say about our services! </small></h2>
+		</div>
+		<section>
+			<div class="row">
+				<div class="col-lg-4">
+					<blockquote>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper, quam porttitor iaculis semper, mi enim venenatis ligula,
+							vel dictum lorem est suscipit nibh. Fusce pulvinar sodales tellus, eget iaculis tellus viverra vel. </p>
+						<footer>John Doe</footer>
+					</blockquote>
+				</div>
+				<div class="col-lg-4">
+					<blockquote>
+						<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+							Fusce rhoncus elit ac nisl hendrerit mattis. Donec tempor urna eros, sed pulvinar purus consectetur vel.  </p>
+						<footer>Jane Doe</footer>
+					</blockquote>
+				</div>
+					<div class="col-lg-4">
+					<blockquote>
+						<p>Nunc ullamcorper risus vitae sem posuere pretium.
+							Sed molestie diam commodo, placerat nulla sit amet, fermentum nisl. In quis justo vel nunc blandit ullamcorper ac a ex.  </p>
+						<footer>Jay Doe</footer>
+					</blockquote>
+				</div>
+			</div>
+		</section>
+	</div>
+	
+	<!--FOOTER-->
+	<footer>
+		<hr>
+		<div class="container text-center">
+			<ul class="list-inline">
+				<li><a href=""> Twitter </a></li>
+				<li><a href=""> Youtube </a></li>
+				<li><a href=""> Facebook </a></li>
+			</ul>
+		</div>
+		<div class="container text-center">
+			<ul class="list-inline">
+				<li><a href=""> Contact Us </a></li>
+				<li><a href=""> FAQs </a></li>
+			</ul>
+		<p> &copy; Copyright @ 2016 </p>
+		</div>
+	</footer>
+
+</body>
+</html>
