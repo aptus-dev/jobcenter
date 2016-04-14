@@ -1,6 +1,5 @@
-<!-- index.html -->
-    <!DOCTYPE html>
-    <html ng-app="router">
+<!DOCTYPE html>
+<html ng-app="authApp">
     <head>
       <!-- SCROLLS -->
       <!-- SPELLS -->
@@ -14,7 +13,12 @@
       <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.css">
       <link rel="stylesheet" href="./css/jumbotron.css">
       <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"-->
-
+    
+    <!-- angularfire scripts -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    <script type="text/javascript" src="./js/auth.js"></script>
+    
   	<!--NAVBAR style-->
 	     <link rel="stylesheet" href="./css/navbar.css">
   	<!--FOOTER style-->
@@ -24,7 +28,6 @@
       document.write('<base href="' + document.location + '" />');
       </script>
     </head>
-
     <style>
     .groove {border-style: groove;}
     .sansserif {
@@ -36,11 +39,11 @@
     </style>
 
     <!-- define angular controller -->
-    <body ng-controller="mainController">
+    <body>
 
 	<!---Navbar--->
 
-  <nav class="navbar navbar-default navbar-fixed-top" id="jobcenter-navbar">
+  <div class="navbar navbar-default navbar-fixed-top" id="jobcenter-navbar">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -61,19 +64,29 @@
 
       </div>
     </div>
-  </nav><!--END NAVBAR-->
+  </div><!--END NAVBAR-->
 
-        <!-- MAIN CONTENT AND INJECTED VIEWS -->
-
-
-        <div id="main text-center">
-            {{ message }}
-            <!-- angular templating -->
-            <!-- this is where content will be injected -->
-            <div ng-view></div>
-
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <br />
+    <br />
+    <br />
+    <div ng-controller="RegisterCtrl">
+        <div class="container">
+          Email: <input type="text" ng-model="email">
+          Password: <input type="text" ng-model="password">
+        
+          <br><br>
+        
+          <button ng-click="createUser()">Create User</button>
+        
+          <br><br>
+        
+          <button ng-click="removeUser()">Remove User</button>
+        
+          <p ng-if="message">Message: <strong>{{ message }}</strong></p>
+          <p ng-if="error">Error: <strong>{{ error }}</strong></p>
         </div>
-</div>
+    </div>
 
 
 	<!--FOOTER-->

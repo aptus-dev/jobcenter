@@ -45,12 +45,8 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-app.get('/booking', function(req, res) {
-    res.sendFile(__dirname + '/public/booking.html');
-});
-
-app.get('/faqs', function(req, res) {
-    res.sendFile(__dirname + '/public/faqs-page.html');
+app.get('/register', function(req, res) {
+    res.sendFile(__dirname + '/public/register.html');
 });
 
 app.listen(process.env.PORT, function(err){
