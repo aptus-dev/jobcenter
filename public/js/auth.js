@@ -9,7 +9,7 @@ app.factory("Auth", ["$firebaseAuth",
 ]);
 
 // and use it in our controller
-app.controller("RegisterCtrl", ["$scope", "Auth",
+app.controller("AuthCtrl", ["$scope", "Auth",
   function($scope, Auth) {
     $scope.createUser = function() {
       $scope.message = null;
@@ -35,6 +35,20 @@ app.controller("RegisterCtrl", ["$scope", "Auth",
       }).then(function() {
         $scope.message = "User removed";
       }).catch(function(error) {
+        $scope.error = error;
+      });
+    };
+    
+    $scope.authWithPassword = function() {
+      $scope.message = null;
+      $scope.error = null;
+      
+      Auth.$authWithPassword({
+        email: $scope.email,
+        password: $scope.password
+      }).then(function(userData){
+        $scope.message = "Authenticated successfully with payload: " + userData.uid;
+      }).catch(function(error){
         $scope.error = error;
       });
     };
