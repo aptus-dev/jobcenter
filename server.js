@@ -53,6 +53,10 @@ app.get('/login', function(req, res) {
     res.sendFile(__dirname + '/public/login.html');
 });
 
+app.get('/loginTest', function(req, res) {
+    res.sendFile(__dirname + '/public/pages-login.html');
+});
+
 app.listen(process.env.PORT, function(err){
     if (err) throw err;
     console.log("Server is running at port: " + process.env.PORT + " and IP: " + process.env.IP );
