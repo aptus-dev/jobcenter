@@ -4,6 +4,7 @@ db.controller("dbViewController", function($scope, $firebaseArray){
 
 var JOB_URL = "https://jobcenter.firebaseio.com/labor/0001";
 var ref = new Firebase(JOB_URL);
+$scope.messages = $firebaseArray(ref);
 
 //var query = ref.orderByChild();
 ref.on("value", function(nameSnap){
@@ -37,8 +38,6 @@ ref.on("value", function(statusSnap){
   $scope.statusData = statusSnap.val().status;
 });
 
-$scope.messages = $firebaseArray(ref);
-
 //download data into a local object
 //var syncObject = $firebaseObject(ref);
 //syncObject.$bindTo($scope, "admin");
@@ -47,13 +46,34 @@ $scope.messages = $firebaseArray(ref);
 
 db.controller("dbPushController", function($scope, $firebaseArray){
 
-  //push data into database
-  var laborRef = ref.child("labor");
+  var URL = "https://jobcenter.firebaseio.com";
+  var pushRef = new Firebase(URL);
+  var laborRef = pushRef.child("labor");
+  //push data into database with unique id
   laborRef.push({
-    "name": "Tito Rosmini",
+    "nama": "Tito Rosmini",
+    "tanggallahir": "27-05-1988",
+    "asal": "Probolinggo",
+    "alamat": "pondok kopi",
+    "lokasi": "Jakarta Timur",
+    "kategori": "Rumah Tangga",
+    "profesi": "Sopir",
+    "tersedia": "ya",
     "gender": "Laki-laki",
-    "lokasi": "Tangerang",
-    "kategori": "Pekerja Berketrampilan"
+    "waktu": "pulang-pergi",
+    "pendidikan": "SMA",
+    "status": "Menikah",
+    "anak": "1",
+    "agama": "Islam",
+    "suku": "Jawa",
+    "gaji": "2.000.000",
+    "ketrampilan": "mengendarai truk",
+    "anjing": "tidak",
+    "pengalaman": "5",
+    "luarnegri": "tidak",
+    "inggris": "tidak",
+    "tinggi": "165",
+    "berat": "65"
   });
 
 }); //end of db push controller
