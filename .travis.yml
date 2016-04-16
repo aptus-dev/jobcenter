@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "4"
+  - '4'
 env:
   - CXX=g++-4.8
 addons:
@@ -9,3 +9,8 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
+deploy:
+  provider: heroku
+  api_key:
+    - secure: jRks5Kki2PVT4SA7HR3LnE954ZXL8GNYaRdcK079FJJ1s8up0KHT/R+gQTttfynG0LjBwx8mT1T0TfmiHQ8qhT/0i5u2g2IRoMk7++aNLj7tk4Dox3CXtKDiGsW6fb9pRwqiQF4UnSddK++ICoTfnrIlAjE9I4WDCPgRGt2sGCI=
+  app: jobcenter-id

@@ -31,7 +31,7 @@
                 templateUrl : 'pages/search.html',
                 controller  : 'searchController'
             });
-
+            
     });
 
 
