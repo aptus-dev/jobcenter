@@ -4,58 +4,314 @@
        <h1>insert Google MAPS API here</h1>
   </div>
 </div>
-<hr>
-<!-- table -->
-<div class="container text-left">
-  <div class="col-lg-4">
-  <h5 class="title">Kategori : </h5>
-</div>
-  <div class="col-lg-4">
-    <h5 class="title">Lokasi :</h5>
-</div>
-</div>
-
+<br>
 
 <!-- filter -->
 <div class="container">
-  <div class="well" style="max-height:400px;overflow:auto;">
-  <div class="row">
-  <div class="col-sm-4">
-      <ul id="check-list-box" class="list-group checked-list-box">
-    <div class="checkbox"><label><input type="checkbox" value="">Chef</label></div>
-  </ul>
-  <ul id="check-list-box" class="list-group checked-list-box">
-<div class="checkbox"><label><input type="checkbox" value="">Supir</label></div>
-</ul>
-<ul id="check-list-box" class="list-group checked-list-box">
-<div class="checkbox"><label><input type="checkbox" value="">Pembantu Rumah Tangga</label></div>
-</ul>
+    <h3 class="text-left">Filter:</h3>
+    <div class="well" style="max-height: 400px;overflow: auto;">
+      <div class="col-xs-3">
+        <div class="form-group">
+         <label for="sel1">Kategori:</label>
+         <select class="form-control" id="kategori">
+           <option>Select</option>
+           <option>Rumah Tangga</option>
+           <option>Pekerja Umum</option>
+           <option>Pekerja Berketrampilan</option>
+         </select>
+       </div>
+        <div class="form-group">
+         <label for="sel2">Status:</label>
+         <select class="form-control" id="status">
+           <option>Select</option>
+           <option>Lajang</option>
+           <option>Menikah</option>
+           <option>Janda / Duda</option>
+           </select>
+       </div>
+       <div class="form-group">
+        <label for="sel6">Agama:</label>
+        <select class="form-control" id="agama">
+          <option>Select</option>
+          <option>Islam</option>
+          <option>Katolik</option>
+          <option>Kristen</option>
+          <option>Hindu</option>
+          <option>Budha</option>
+          <option>Lainnya</option>
+        </select>
+      </div>
+      <div class="form-group">
+       <label for="sel1">Waktu:</label>
+       <select class="form-control" id="waktu">
+         <option>Select</option>
+         <option>Menginap</option>
+         <option>Infal</option>
+         <option>Pulang-Pergi</option>
+       </select>
+     </div>
+    </div>
+
+    <div class="col-xs-3">
+      <div class="form-group">
+       <label for="sel3">Lokasi Cabang:</label>
+       <select class="form-control" id="lokasi">
+         <option>Select</option>
+         <option>Jakarta</option>
+         <option>Bandung</option>
+         <option>Surabaya</option>
+         <option>Medan</option>
+         <option>Semarang</option>
+         <option>Ambon</option>
+         <option>Balikpapan</option>
+         <option>Banda Aceh</option>
+         <option>Bandar Lampung</option>
+         <option>Banjarmasin</option>
+         <option>Batam</option>
+         <option>Bekasi</option>
+         <option>Bengkulu</option>
+         <option>Bogor</option>
+         <option>Cirebon</option>
+         <option>Denpasar</option>
+         <option>Depok</option>
+         <option>Gorontalo</option>
+         <option>Jambi</option>
+         <option>Jayapura</option>
+         <option>Kediri</option>
+         <option>Kendari</option>
+         <option>Madiun</option>
+         <option>Makassar</option>
+         <option>Malang</option>
+         <option>Manado</option>
+         <option>Padang</option>
+         <option>Palembang</option>
+         <option>Pekanbaru</option>
+         <option>Pontianak</option>
+         <option>Samarinda</option>
+         <option>Serang</option>
+         <option>Tangerang</option>
+         <option>Tasikmalaya</option>
+         <option>Tegal</option>
+         <option>Yogyakarta</option>
+       </select>
+     </div>
+      <div class="form-group">
+       <label for="sel4">Gaji Bulanan(min):</label>
+       <select class="form-control" id="gajimin">
+         <option>Select</option>
+         <option>Rp 1,000,000</option>
+         <option>Rp 1,100,000</option>
+         <option>Rp 1,200,000</option>
+         <option>Rp 1,300,000</option>
+         <option>Rp 1,400,000</option>
+         <option>Rp 1,500,000</option>
+         <option>Rp 1,600,000</option>
+         <option>Rp 1,700,000</option>
+         <option>Rp 1,800,000</option>
+         <option>Rp 1,900,000</option>
+         <option>Rp 2,000,000</option>
+         <option>Rp 2,100,000</option>
+         <option>Rp 2,200,000</option>
+         <option>Rp 2,300,000</option>
+         <option>Rp 2,400,000</option>
+         <option>Rp 2,500,000</option>
+         <option>Rp 2,600,000</option>
+         <option>Rp 2,700,000</option>
+         <option>Rp 2,800,000</option>
+         <option>Rp 2,900,000</option>
+         <option>Rp 3,000,000</option>
+         <option>Rp 3,100,000</option>
+         <option>Rp 3,200,000</option>
+         <option>Rp 3,300,000</option>
+         <option>Rp 3,400,000</option>
+         <option>Rp 3,500,000</option>
+       </select>
+     </div>
+     <div class="form-group">
+      <label for="sel1">Suku Asal:</label>
+      <select class="form-control" id="suku">
+        <option>Select</option>
+        <option>Jawa</option>
+        <option>Sunda</option>
+        <option>Banten</option>
+        <option>Batak</option>
+        <option>Bali</option>
+        <option>NTT</option>
+        <option>Lampung</option>
+        <option>Madura</option>
+        <option>Melayu</option>
+        <option>Lainnya</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-xs-3">
+    <div class="form-group">
+     <label for="sel5">Profesi:</label>
+     <select class="form-control" id="profesi">
+       <option>Select</option>
+       <option>P.R.T.</option>
+       <option>Nanny</option>
+       <option>Baby Sitter</option>
+       <option>Perawat Lansia</option>
+       <option>Tukang Kebun</option>
+       <option>Sopir</option>
+       <option>Pekerja Umum</option>
+       <option>Pekerja Beketrampilan</option>
+     </select>
+   </div>
+   <div class="form-group">
+    <label for="sel4">Gaji Bulanan(max):</label>
+    <select class="form-control" id="gajimax">
+      <option>Select</option>
+      <option>Rp 1,000,000</option>
+      <option>Rp 1,100,000</option>
+      <option>Rp 1,200,000</option>
+      <option>Rp 1,300,000</option>
+      <option>Rp 1,400,000</option>
+      <option>Rp 1,500,000</option>
+      <option>Rp 1,600,000</option>
+      <option>Rp 1,700,000</option>
+      <option>Rp 1,800,000</option>
+      <option>Rp 1,900,000</option>
+      <option>Rp 2,000,000</option>
+      <option>Rp 2,100,000</option>
+      <option>Rp 2,200,000</option>
+      <option>Rp 2,300,000</option>
+      <option>Rp 2,400,000</option>
+      <option>Rp 2,500,000</option>
+      <option>Rp 2,600,000</option>
+      <option>Rp 2,700,000</option>
+      <option>Rp 2,800,000</option>
+      <option>Rp 2,900,000</option>
+      <option>Rp 3,000,000</option>
+      <option>Rp 3,100,000</option>
+      <option>Rp 3,200,000</option>
+      <option>Rp 3,300,000</option>
+      <option>Rp 3,400,000</option>
+      <option>Rp 3,500,000</option>
+    </select>
+  </div>
+   <div class="form-group">
+    <label for="sel2">Usia (min):</label>
+    <select class="form-control" id="usiamin">
+      <option>Select</option>
+      <option>17</option>
+      <option>18</option>
+      <option>19</option>
+      <option>20</option>
+      <option>21</option>
+      <option>22</option>
+      <option>23</option>
+      <option>24</option>
+      <option>25</option>
+      <option>26</option>
+      <option>27</option>
+      <option>28</option>
+      <option>29</option>
+      <option>30</option>
+      <option>31</option>
+      <option>32</option>
+      <option>33</option>
+      <option>34</option>
+      <option>35</option>
+      <option>36</option>
+      <option>37</option>
+      <option>38</option>
+      <option>39</option>
+      <option>40</option>
+      <option>41</option>
+      <option>42</option>
+      <option>43</option>
+      <option>44</option>
+      <option>45</option>
+      <option>46</option>
+      <option>47</option>
+      <option>48</option>
+      <option>49</option>
+      <option>50</option>
+      <option>51</option>
+      <option>52</option>
+      <option>53</option>
+      <option>54</option>
+      <option>55</option>
+    </select>
+  </div>
 </div>
-<div class="col-sm-4">
-    <ul id="check-list-box" class="list-group checked-list-box">
-  <div class="checkbox"><label><input type="checkbox" value="">Baby Sitter</label></div>
-</ul>
-<ul id="check-list-box" class="list-group checked-list-box">
-<div class="checkbox"><label><input type="checkbox" value="">Nanny</label></div>
-</ul>
-<ul id="check-list-box" class="list-group checked-list-box">
-<div class="checkbox"><label><input type="checkbox" value="">Perawat Lansia</label></div>
-</ul>
+
+<div class="col-xs-3">
+  <div class="form-group">
+   <label for="sel7">Jenis Kelamin:</label>
+   <select class="form-control" id="gender">
+     <option>Select</option>
+     <option>Pria</option>
+     <option>Wanita</option>
+   </select>
+ </div>
+ <div class="form-group">
+  <label for="sel7">Pendidikan Terakhir:</label>
+  <select class="form-control" id="pendidikan">
+    <option>Select</option>
+    <option>SD</option>
+    <option>SMP</option>
+    <option>SMA</option>
+    <option>Perguruan Tinggi</option>
+  </select>
 </div>
-<div class="col-sm-4">
-   <ul id="check-list-box" class="list-group checked-list-box">
- <div class="checkbox"><label><input type="checkbox" value="">Skilled Labor</label></div>
-</ul>
-<ul id="check-list-box" class="list-group checked-list-box">
-<div class="checkbox"><label><input type="checkbox" value="">General Labor</label></div>
-</ul>
-<ul id="check-list-box" class="list-group checked-list-box">
-<div class="checkbox"><label><input type="checkbox" value="">Kuli Bangunan</label></div>
-</ul>
+<div class="form-group">
+ <label for="sel2">Usia (max):</label>
+ <select class="form-control" id="usiamax">
+   <option>Select</option>
+   <option>17</option>
+   <option>18</option>
+   <option>19</option>
+   <option>20</option>
+   <option>21</option>
+   <option>22</option>
+   <option>23</option>
+   <option>24</option>
+   <option>25</option>
+   <option>26</option>
+   <option>27</option>
+   <option>28</option>
+   <option>29</option>
+   <option>30</option>
+   <option>31</option>
+   <option>32</option>
+   <option>33</option>
+   <option>34</option>
+   <option>35</option>
+   <option>36</option>
+   <option>37</option>
+   <option>38</option>
+   <option>39</option>
+   <option>40</option>
+   <option>41</option>
+   <option>42</option>
+   <option>43</option>
+   <option>44</option>
+   <option>45</option>
+   <option>46</option>
+   <option>47</option>
+   <option>48</option>
+   <option>49</option>
+   <option>50</option>
+   <option>51</option>
+   <option>52</option>
+   <option>53</option>
+   <option>54</option>
+   <option>55</option>
+ </select>
 </div>
+<br>
+<a href="#" class="btn btn-primary pull-right">
+<span class="glyphicon glyphicon-filter"></span> Update
+</a>
 </div>
+
+  </div>
 </div>
-</div><!--end of checkbox-->
+<!--END Filter-->
 
 <div class="container">
   <div class="page-header">

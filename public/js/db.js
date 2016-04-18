@@ -51,29 +51,29 @@ db.controller("dbPushController", function($scope, $firebaseArray){
   var laborRef = pushRef.child("labor");
   //push data into database with unique id
   laborRef.push({
-    "nama": "Tito Rosmini",
-    "tanggallahir": "27-05-1988",
-    "asal": "Probolinggo",
-    "alamat": "pondok kopi",
-    "lokasi": "Jakarta Timur",
+    "nama": "Maryati",
+    "tanggallahir": "27-04-1985",
+    "asal": "Padang Panjang",
+    "alamat": "Depok 2",
+    "lokasi": "Depok",
     "kategori": "Rumah Tangga",
-    "profesi": "Sopir",
+    "profesi": "Nanny",
     "tersedia": "ya",
-    "gender": "Laki-laki",
-    "waktu": "pulang-pergi",
-    "pendidikan": "SMA",
-    "status": "Menikah",
-    "anak": "1",
+    "gender": "Perempuan",
+    "waktu": "Menginap",
+    "pendidikan": "SD",
+    "status": "Lajang",
+    "anak": "0",
     "agama": "Islam",
-    "suku": "Jawa",
-    "gaji": "2.000.000",
-    "ketrampilan": "mengendarai truk",
-    "anjing": "tidak",
-    "pengalaman": "5",
+    "suku": "Padang",
+    "gaji": "2.700.000",
+    "ketrampilan": "memasak, mencuci",
+    "anjing": "ya",
+    "pengalaman": "7",
     "luarnegri": "tidak",
     "inggris": "tidak",
-    "tinggi": "165",
-    "berat": "65"
+    "tinggi": "162",
+    "berat": "50"
   });
 
 }); //end of db push controller
