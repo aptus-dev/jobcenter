@@ -20,6 +20,7 @@ db.controller("dbViewController", function ($scope, $firebaseArray) {
       $scope.maritalData = snap.val().marital;
       $scope.typeData = snap.val().type;
       $scope.statusData = snap.val().status;
+      $scope.gambarData = snap.val().images;
     }
     else {
       alert("ALERT!");
@@ -76,7 +77,11 @@ db.controller("dbPushController", function ($scope, $firebaseArray) {
     "luarnegri": "tidak",
     "inggris": "tidak",
     "tinggi": "162",
-    "berat": "50"
+    "berat": "50",
+    "images": [
+      "./Gallery/gadis_1.jpg",
+      "./Gallery/gadis_2.jpg"
+    ]
   });
 
 }); //end of db push controller
