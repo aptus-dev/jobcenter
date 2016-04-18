@@ -1,56 +1,78 @@
 var app = angular.module("authApp", ["firebase"]);
 
-// let's create a re-usable factory that generates the $firebaseAuth instance
-app.factory("Auth", ["$firebaseAuth",
-  function($firebaseAuth) {
-    var ref = new Firebase("https://jobcenter-id-auth.firebaseio.com");
-    return $firebaseAuth(ref);
+// // let's create a re-usable factory that generates the $firebaseAuth instance
+// app.factory("Auth", ["$firebaseAuth",
+//   function($firebaseAuth) {
+//     var ref = new Firebase("https://jobcenter-id-auth.firebaseio.com");
+//     return $firebaseAuth(ref);
+//   }
+// ]);
+
+// and use it in our controller
+
+app.controller('AlertCtrl', [
+  '$scope', '$rootScope', function($scope, $rootScope) {
+    $rootScope.alert = {};
   }
 ]);
 
-// and use it in our controller
-app.controller("AuthCtrl", ["$scope", "Auth",
-  function($scope, Auth) {
-    $scope.createUser = function() {
-      $scope.message = null;
-      $scope.error = null;
 
-      Auth.$createUser({
+app.controller("AuthCtrl", ["$scope", "$rootScope", "$firebaseAuth",
+  function($scope, $rootScope, $firebaseAuth) {
+    var ref = new Firebase('https://jobcenter-id-auth.firebaseio.com');
+    $rootScope.auth = $firebaseAuth(ref);
+    
+    $scope.createUser = function() {
+      $rootScope.alert.message = null;
+      $rootScope.error = null;
+
+      $rootScope.auth.$createUser({
         email: $scope.email,
         password: $scope.password
       }).then(function(userData) {
-        $scope.message = "User created with uid: " + userData.uid;
+        $rootScope.alert.message = "User created with uid: " + userData.uid;
       }).catch(function(error) {
-        $scope.error = error;
+        $rootScope.error = error;
       });
     };
 
     $scope.removeUser = function() {
-      $scope.message = null;
-      $scope.error = null;
+      $rootScope.alert.message = null;
+      $rootScope.error = null;
 
-      Auth.$removeUser({
+      $rootScope.auth.$removeUser({
         email: $scope.email,
         password: $scope.password
       }).then(function() {
-        $scope.message = "User removed";
+        $rootScope.alert.message = "User removed";
       }).catch(function(error) {
-        $scope.error = error;
+        $rootScope.error = error;
       });
     };
     
     $scope.authWithPassword = function() {
-      $scope.message = null;
-      $scope.error = null;
+      $rootScope.alert.message = null;
+      $rootScope.error = null;
       
-      Auth.$authWithPassword({
+      $rootScope.auth.$authWithPassword({
         email: $scope.email,
         password: $scope.password
       }).then(function(userData){
-        $scope.message = "Authenticated successfully with payload: " + userData.uid;
+        $rootScope.alert.class = 'success';
+        $rootScope.alert.message = "Authenticated successfully with payload: " + userData.uid;
       }).catch(function(error){
-        $scope.error = error;
+        if (error = "INVALID_EMAIL") {
+          $rootScope.alert.class = 'danger';
+          $rootScope.alert.message = 'You have entered an invalid username or password';
+        // } else if (error = "INVALID_PASSWORD") {
+        //   $rootScope.alert.class = 'danger';
+        //   $rootScope.alert.message = 'You have entered an invalid password';
+        } else {
+          $rootScope.alert.class = 'danger';
+          $rootScope.alert.message = error;
+        }
       });
     };
   }
 ]);
+

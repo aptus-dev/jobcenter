@@ -15,7 +15,7 @@
         <script src="https://code.angularjs.org/1.5.3/angular.min.js"></script>
         <script type="text/javascript" src="./js/angular-route.js"></script>
         <script src="./js/router.js"></script>
-        
+
         <!-- angularfire scripts -->
         <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
         <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
@@ -32,8 +32,13 @@
             <div class="login-box animated fadeInDown" ng-controller="AuthCtrl">
                 <div class="login-logo"></div>
                 <div class="login-body">
-                    <div class="login-title"><strong>Welcome</strong>, Please login</div>
+                    <div class="login-title"><strong>Welcome</strong>, please login</div>
                     <form class="form-horizontal">
+                        <div class="container" ng-controller="AlertCtrl">
+                            <div class="alert alert-{{alert.class}}" ng-model="alert.message" ng-show="alert.message">
+                                {{alert.message}}
+                            </div>
+                        </div>
                     <div class="form-group">
                         <div class="col-md-12">
                             <input type="text" class="form-control" placeholder="Email" ng-model="email">
@@ -51,8 +56,8 @@
                         <div class="col-md-6">
                             <button class="btn btn-info btn-block" ng-click="authWithPassword()">Log In</button>
                         </div>
-                        <p ng-if="message">Message: <strong>{{ message }}</strong></p>
-                        <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+                        <!--<p ng-if="message">Message: <strong>{{ message }}</strong></p>-->
+                        <!--<p ng-if="error">Error: <strong>{{ error }}</strong></p>-->
                     </div>
                     </form>
                 </div>
