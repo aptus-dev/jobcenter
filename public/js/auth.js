@@ -1,21 +1,32 @@
 var app = angular.module("authApp", ["firebase"]);
 
-// let's create a re-usable factory that generates the $firebaseAuth instance
-app.factory("Auth", ["$firebaseAuth",
-  function($firebaseAuth) {
-    var ref = new Firebase("https://jobcenter-id-auth.firebaseio.com");
-    return $firebaseAuth(ref);
+// // let's create a re-usable factory that generates the $firebaseAuth instance
+// app.factory("Auth", ["$firebaseAuth",
+//   function($firebaseAuth) {
+//     var ref = new Firebase("https://jobcenter-id-auth.firebaseio.com");
+//     return $firebaseAuth(ref);
+//   }
+// ]);
+
+// and use it in our controller
+
+app.controller('AlertCtrl', [
+  '$scope', '$rootScope', function($scope, $rootScope) {
+    $rootScope.alert = {};
   }
 ]);
 
-// and use it in our controller
-app.controller("AuthCtrl", ["$scope", "$rootScope", "Auth",
-  function($scope, $rootScope, Auth) {
+
+app.controller("AuthCtrl", ["$scope", "$rootScope", "$firebaseAuth",
+  function($scope, $rootScope, $firebaseAuth) {
+    var ref = new Firebase('https://jobcenter-id-auth.firebaseio.com');
+    $rootScope.auth = $firebaseAuth(ref);
+    
     $scope.createUser = function() {
       $rootScope.alert.message = null;
       $rootScope.error = null;
 
-      Auth.$createUser({
+      $rootScope.auth.$createUser({
         email: $scope.email,
         password: $scope.password
       }).then(function(userData) {
@@ -29,7 +40,7 @@ app.controller("AuthCtrl", ["$scope", "$rootScope", "Auth",
       $rootScope.alert.message = null;
       $rootScope.error = null;
 
-      Auth.$removeUser({
+      $rootScope.auth.$removeUser({
         email: $scope.email,
         password: $scope.password
       }).then(function() {
@@ -43,7 +54,7 @@ app.controller("AuthCtrl", ["$scope", "$rootScope", "Auth",
       $rootScope.alert.message = null;
       $rootScope.error = null;
       
-      Auth.$authWithPassword({
+      $rootScope.auth.$authWithPassword({
         email: $scope.email,
         password: $scope.password
       }).then(function(userData){
@@ -65,8 +76,3 @@ app.controller("AuthCtrl", ["$scope", "$rootScope", "Auth",
   }
 ]);
 
-app.controller('AlertCtrl', [
-  '$scope', '$rootScope', function($scope, $rootScope) {
-    $rootScope.alert = {};
-  }
-]);
