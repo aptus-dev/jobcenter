@@ -50,7 +50,7 @@
             
     });
 
-    app.controller('loginController', function($scope, $location, $rootScope){
+    router.controller('loginController', function($scope, $location, $rootScope){
        $scope.submit = function() {
            
            if($scope.email == '' && $scope.password == '') {
