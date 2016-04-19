@@ -88,16 +88,9 @@ db.controller("dbPushController", function ($scope, $firebaseArray) {
     "inggris": "tidak",
     "tinggi": "162",
     "berat": "50",
-<<<<<<< HEAD
     "images": "./Gallery/gadis_1.jpg",
     "non-halal": "ya",
     "lembur": "ya"
-=======
-    "images": [
-      "./Gallery/gadis_1.jpg",
-      "./Gallery/gadis_2.jpg"
-    ]
->>>>>>> 9b5db782aed6bc059c19f9a7acc6569b3a7ceae7
   });
 
 }); //end of db push controller
