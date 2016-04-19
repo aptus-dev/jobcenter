@@ -50,17 +50,17 @@
             
     });
 
-    app.controller('loginController', function($scope, $location, $rootScope){
-       $scope.submit = function() {
+    // /*app.controller('loginController', function($scope, $location, $rootScope){
+    //    $scope.submit = function() {
            
-           if($scope.email == '' && $scope.password == '') {
-               $rootScope.loggedIn = true;
-               $location.path('admin-index.html');
-           } else {
-               alert('Wrong Credentials');
-           }
-         }
-       }); 
+    //        if($scope.email == '' && $scope.password == '') {
+    //            $rootScope.loggedIn = true;
+    //            $location.path('admin-index.html');
+    //        } else {
+    //            alert('Wrong Credentials');
+    //        }
+    //      }
+    //    }); */
     
     
     // create the controller and inject Angular's $scope
