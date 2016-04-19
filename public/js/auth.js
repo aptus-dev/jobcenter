@@ -1,4 +1,4 @@
-var app = angular.module("authApp", ["firebase"]);
+var app = angular.module('authApp', ['firebase']);
 
 // // let's create a re-usable factory that generates the $firebaseAuth instance
 // app.factory("Auth", ["$firebaseAuth",
@@ -17,8 +17,8 @@ app.controller('AlertCtrl', [
 ]);
 
 
-app.controller("AuthCtrl", ["$scope", "$rootScope", "$firebaseAuth",
-  function($scope, $rootScope, $firebaseAuth) {
+app.controller('AuthCtrl', ['$scope', '$rootScope', '$location', '$firebaseAuth',
+  function($scope, $rootScope, $location, $firebaseAuth) {
     var ref = new Firebase('https://jobcenter-id-auth.firebaseio.com');
     $rootScope.auth = $firebaseAuth(ref);
     
@@ -30,7 +30,7 @@ app.controller("AuthCtrl", ["$scope", "$rootScope", "$firebaseAuth",
         email: $scope.email,
         password: $scope.password
       }).then(function(userData) {
-        $rootScope.alert.message = "User created with uid: " + userData.uid;
+        $rootScope.alert.message = 'User created with uid: ' + userData.uid;
       }).catch(function(error) {
         $rootScope.error = error;
       });
@@ -44,7 +44,7 @@ app.controller("AuthCtrl", ["$scope", "$rootScope", "$firebaseAuth",
         email: $scope.email,
         password: $scope.password
       }).then(function() {
-        $rootScope.alert.message = "User removed";
+        $rootScope.alert.message = 'User removed';
       }).catch(function(error) {
         $rootScope.error = error;
       });
@@ -59,14 +59,16 @@ app.controller("AuthCtrl", ["$scope", "$rootScope", "$firebaseAuth",
         password: $scope.password
       }).then(function(userData){
         $rootScope.alert.class = 'success';
-        $rootScope.alert.message = "Authenticated successfully with payload: " + userData.uid;
+        // $rootScope.alert.message = 'Authenticated successfully with payload: ' + userData.uid;
+        $rootScope.loggedIn = true;
+        $location.path('/admin-index');
       }).catch(function(error){
-        if (error = "INVALID_EMAIL") {
+        if (error = 'INVALID_EMAIL') {
           $rootScope.alert.class = 'danger';
           $rootScope.alert.message = 'You have entered an invalid username or password';
-        // } else if (error = "INVALID_PASSWORD") {
-        //   $rootScope.alert.class = 'danger';
-        //   $rootScope.alert.message = 'You have entered an invalid password';
+        } else if (error = 'INVALID_PASSWORD') {
+          $rootScope.alert.class = 'danger';
+          $rootScope.alert.message = 'You have entered an invalid password';
         } else {
           $rootScope.alert.class = 'danger';
           $rootScope.alert.message = error;
