@@ -30,11 +30,39 @@
             .when('/search', {
                 templateUrl : 'pages/search.html',
                 controller  : 'searchController'
+            })
+            
+             // route for the login page
+            .when('/login', {
+                templateUrl : 'pages-login.html'
+            })
+            
+            .when('/admin-index', {
+                resolve:{
+                    "check": function($location, $rootScope) {
+                        if(!$rootScope.loggedIn) {
+                            $location.path('/login');
+                        }
+                    }
+                },
+                templateUrl : 'admin-index.html'
             });
             
     });
 
-
+    app.controller('loginController', function($scope, $location, $rootScope){
+       $scope.submit = function() {
+           
+           if($scope.email == '' && $scope.password == '') {
+               $rootScope.loggedIn = true;
+               $location.path('admin-index.html');
+           } else {
+               alert('Wrong Credentials');
+           }
+         }
+       }); 
+    
+    
     // create the controller and inject Angular's $scope
     router.controller('mainController', function($scope, $location, $anchorScroll, $routeParams) {
         // create a message to display in our view
