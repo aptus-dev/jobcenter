@@ -2,11 +2,19 @@ var db = angular.module("dbApp", ["firebase"]);
 
 var URL = "https://jobcenter.firebaseio.com";
 
-db.controller("dbHomeController", function($scope, $firebaseArray) {
+db.controller("searchController", function($scope, $firebaseArray) {
   
   var ref2 = new Firebase(URL);
-  var child2 = ref2.child('labor');
-  $scope.datas = $firebaseArray(child2);
+  var child = ref2.child("labor");
+  $scope.datas = $firebaseArray(child);
+  
+  $scope.filter = {};
+  $scope.input = {};
+  $scope.apply = function() {
+    for(prop in $scope.input) {
+      $scope.filter[prop] = $scope.input[prop];
+    }
+  };
   
 });
 

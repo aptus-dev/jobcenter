@@ -12,6 +12,9 @@
         <link rel="stylesheet" type="text/css" href="./css/revolution-slider/settings.css" media="screen" />
 
         <link rel="stylesheet" type="text/css" href="./css/styles.css" media="screen" />
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="./js/db.js"></script>
 
     </head>
     <body>
@@ -133,11 +136,11 @@
                                             <p>Mulailah pencarian pekerja dengan memilih kategori dan lokasi</p>
                                         </div>
                                         <br>
-                                        <div class="row">
-                                        <form action="" class="form-group">
+                                   <!--     <div class="row" ng-app="dbApp">
+                                        <form action="" class="form-group" ng-controller="searchController">
                                             <div class="form-group col-xs-3 col-xs-offset-3">
                                                 <label for="sel1">Kategori:</label>
-                                                    <select class="form-control" id="selectcategory">
+                                                    <select class="form-control" id="selectcategory" ng-model="input.kategori">
                                                         <option>Pembantu Rumah Tangga</option>
                                                         <option>Pekerja Umum</option>
                                                         <option>Pekerja Berketerampilan</option>
@@ -145,8 +148,12 @@
                                             </div>
                                             <div class="form-group col-xs-3">
                                             <label for="sel1">Lokasi:</label>
-                                                    <select class="form-control" id="selectlocation">
-                                                        <option>Jakarta</option>
+                                                    <select class="form-control" id="selectlocation" ng-model="input.lokasi">
+                                                        <option>Jakarta Utara</option>
+                                                        <option>Jakarta Timur</option>
+                                                        <option>Jakarta Barat</option>
+                                                        <option>Jakarta Selatan</option>
+                                                        <option>Jakarta Pusat</option>
                                                         <option>Bogor</option>
                                                         <option>Depok</option>
                                                         <option>Tanggerang</option>
@@ -157,9 +164,9 @@
                                                 <br>
                                             </div>
                                         </form>
-                                    </div><!--END Container-->
+                                    </div>  END Container-->
                                     <div class="row">
-                                    <button type="submit" class="btn btn-primary" align="center">Search</button>
+                                    <button type="submit" class="btn btn-primary" align="center" onclick="location.href='search.html'">Cari Sekarang!</button>
                                     </div>
                                 </div>
 
