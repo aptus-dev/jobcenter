@@ -1,94 +1,452 @@
-<!-- index.html -->
-    <!DOCTYPE html>
-    <html ng-app="router">
+<!DOCTYPE html>
+<html lang="en">
     <head>
-      <!-- SCROLLS -->
-      <!-- SPELLS -->
-      <!-- load angular and angular route via CDN -->
+        <!-- META SECTION -->
+        <title>Atlant - Front-End Template</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- END META SECTION -->
 
-      <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
-      <script src="https://code.angularjs.org/1.5.3/angular.min.js"></script>
-      <script type="text/javascript" src="./js/angular-route.js"></script>
-      <script src="./js/router.js"></script>
-      <!-- load bootstrap and fontawesome via CDN -->
-      <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.css">
-      <link rel="stylesheet" href="./css/jumbotron.css">
-      <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"-->
+        <link rel="stylesheet" type="text/css" href="css/revolution-slider/extralayers.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/revolution-slider/settings.css" media="screen" />
 
-  	<!--NAVBAR style-->
-	     <link rel="stylesheet" href="./css/navbar.css">
-  	<!--FOOTER style-->
-	     <!--link rel="stylesheet" href="./css/footer.css"-->
+        <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
 
-      <script>
-      document.write('<base href="' + document.location + '" />');
-      </script>
     </head>
+    <body>
+        <!-- page container -->
+        <div class="page-container">
 
-    <style>
-    .groove {border-style: groove;}
-    .sansserif {
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .serif {
-        font-family: "Times New Roman", Times, serif;
-    }
-    </style>
+            <!-- page header -->
+            <div class="page-header">
 
-    <!-- define angular controller -->
-    <body ng-controller="mainController">
+                <!-- page header holder -->
+                <div class="page-header-holder">
 
-	<!---Navbar--->
-
-  <nav class="navbar navbar-default navbar-fixed-top" id="jobcenter-navbar">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#home">JobCenter</a>
-      </div>
-
-      <div class="collapse navbar-collapse">
-				<ul>
-      				<li><a href="#search">Cari Pekerja</a></li>
-      				<li><a href="#/home#testimoni">Testimoni</a></li>
-      				<li><a href="#/home#about">Tentang Kami</a></li>
-		          <li style="float:right"><a class="btn" href="./pages/contact.html">Contact Us</a></li>
-				</ul>
-
-      </div>
-    </div>
-  </nav><!--END NAVBAR-->
-
-        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+                    <!-- page logo -->
+                    <div class="logo">
+                        <a href="index.html">JobCenter.com</a>
+                    </div>
+                    <!-- ./page logo -->
 
 
-        <div id="main text-center">
-            {{ message }}
-            <!-- angular templating -->
-            <!-- this is where content will be injected -->
-            <div ng-view></div>
+                    <!-- nav mobile bars -->
+                    <div class="navigation-toggle">
+                        <div class="navigation-toggle-button"><span class="fa fa-bars"></span></div>
+                    </div>
+                    <!-- ./nav mobile bars -->
+
+                    <!-- navigation -->
+                    <ul class="navigation">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contacts.html">Contact Us</a></li>
+                        <li><a href="search.html">Cari Pekerja</a></li>
+                    </ul>
+                    <!-- ./navigation -->
+
+
+                </div>
+                <!-- ./page header holder -->
+
+            </div>
+            <!-- ./page header -->
+
+            <!-- page content -->
+            <div class="page-content">
+
+
+                <!-- revolution slider -->
+                <div class="banner-container">
+                    <div class="banner">
+
+                        <ul>
+                            <li data-transition="fade" data-slotamount="1" data-masterspeed="700" >
+                                <img src="assets/video/video_typing_cover.jpg"  alt="video_typing_cover"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                                <div class="tp-caption tp-fade fadeout fullscreenvideo"
+                                    data-x="0"
+                                    data-y="0"
+                                    data-speed="1000"
+                                    data-start="1100"
+                                    data-easing="Power4.easeOut"
+                                    data-elementdelay="0.01"
+                                    data-endelementdelay="0.01"
+                                    data-endspeed="1500"
+                                    data-endeasing="Power4.easeIn"
+                                    data-autoplay="true"
+                                    data-autoplayonlyfirsttime="false"
+                                    data-nextslideatend="true"
+                                    data-volume="mute" data-forceCover="1" data-aspectratio="16:9" data-forcerewind="on" style="z-index: 2;">
+
+                                    <video class="" preload="none" width="100%" height="100%" poster="assets/video/video_typing_cover.jpg">
+                                        <source src='assets/video/computer_typing.mp4' type='video/mp4'/>
+                                        <source src='assets/video/computer_typing.webm' type='video/webm'/>
+                                    </video>
+                                </div>
+
+                                <div class="tp-caption customin ltl"
+                                        data-x="300"
+                                        data-y="200"
+                                        data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+                                        data-speed="500"
+                                        data-start="1500"
+                                        data-easing="Power4.easeInOut"
+                                        data-splitin="none"
+                                        data-splitout="none"
+                                        data-elementdelay="0.01"
+                                        data-endelementdelay="0.1"
+                                        data-endspeed="1000"
+                                        data-endeasing="Power4.easeIn"
+                                        style="z-index: 3;">
+                                        <div>
+                                        <h1><strong>Cari dengan mudah</strong></h1>
+                                            <div>
+                                                <p>Biggest worker agency in Indonesia. </p>
+                                                <p>Provides the most diverse types of workers in Java.</p>
+                                            </div>
+                                        </div>
+                                </div>
+
+
+                            </li>
+                            
+                            <li data-transition="fade" data-slotamount="1" data-masterspeed="500"  data-saveperformance="on">
+                                <img src="img/backgrounds/photo-jumbo.jpg" />
+
+                                <div class="tp-caption lft customout rs-parallaxlevel-0"
+                                    data-x="0"
+                                    data-y="150"
+                                    data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                    data-speed="500"
+                                    data-start="700"
+                                    data-easing="Power3.easeInOut"
+                                    data-elementdelay="500"
+                                    data-endelementdelay="500"
+                                    style="z-index: 2;">
+                                    <div class="container text-center">
+                                        <div class="row">
+                                        <h1><strong>Mau Cari Pekerja?</strong></h1>
+                                            <p>Anda terlalu sibuk dan tidak sempat memelihara rumah atau tempat anda?</p>
+                                            <p>Mulailah pencarian pekerja dengan memilih kategori dan lokasi</p>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                        <form action="" class="form-group">
+                                            <div class="form-group col-xs-3 col-xs-offset-3">
+                                                <label for="sel1">Kategori:</label>
+                                                    <select class="form-control" id="selectcategory">
+                                                        <option>Pembantu Rumah Tangga</option>
+                                                        <option>Pekerja Umum</option>
+                                                        <option>Pekerja Berketerampilan</option>
+                                                    </select>
+                                            </div>
+                                            <div class="form-group col-xs-3">
+                                            <label for="sel1">Lokasi:</label>
+                                                    <select class="form-control" id="selectlocation">
+                                                        <option>Jakarta</option>
+                                                        <option>Bogor</option>
+                                                        <option>Depok</option>
+                                                        <option>Tanggerang</option>
+                                                        <option>Bekasi</option>
+                                                    </select>
+                                            </div>
+                                            <div class="form-group col-xs-3">
+                                                <br>
+                                            </div>
+                                        </form>
+                                    </div><!--END Container-->
+                                    <div class="row">
+                                    <button type="submit" class="btn btn-primary" align="center">Search</button>
+                                    </div>
+                                </div>
+
+                            </li>
+
+                            
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- ./revolution slider -->
+
+                <!-- page content wrapper -->
+                <div class="page-content-wrap bg-img-1">
+
+
+                    <!-- page content holder -->
+                    <div class="page-content-holder">
+
+                        <div class="row">
+                            <div class="col-md-8 this-animate" data-animate="fadeInLeft">
+
+                                <div class="block-heading block-heading-centralized">
+                                    <h2 class="heading-underline">JobCenter.Com</h2>
+                                    <div class="block-heading-text">
+                                        Biggest worker agency in Indonesia. Provides the most diverse types of workers in over 200 areas in Java.
+                                    </div>
+                                </div>
+                                <div class="block this-animate" data-animate="fadeInLeft">
+                                    <img src="assets/atlant_technologies.png" class="img-responsive"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4 this-animate text-center" data-animate="fadeInRight">
+                                <img src="assets/atlant_responsive.png" class="img-responsive-mobile"/>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <!-- ./page content holder -->
+                </div>
+                <!-- ./page content wrapper -->
+
+                <!-- page content wrapper -->
+                <div class="page-content-wrap bg-texture-1 bg-dark light-elements">
+
+                    <div class="divider"><div class="box"><span class="fa fa-angle-down"></span></div></div>
+
+                    <!-- page content holder -->
+                    <div class="page-content-holder">
+
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="text-column text-column-centralized tex-column-icon-lg this-animate" data-animate="fadeInLeft">
+                                    <div class="text-column-icon">
+                                        <span class="fa fa-search"></span>
+                                    </div>
+                                    <h4><strong>CARI</strong></h4>
+                                    <div class="text-column-info">
+                                        Gunakan search function kami untuk mencari sesuai kamauan anda. Pilih tipe pekerja yang anda cari dan pilih lokasi yang sesuai.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="text-column text-column-centralized tex-column-icon-lg this-animate" data-animate="fadeInUp">
+                                    <div class="text-column-icon">
+                                        <span class="fa fa-calendar"></span>
+                                    </div>
+                                    <h4><strong>BOOK</strong></h4>
+                                    <div class="text-column-info">
+                                        Setelah anda menemukan pekerja yang anda suka, tekan tombol "Booking" dan isi form.
+                                        Selanjutnya anda akan dihubungi admin kami untuk process konfirmasi & penjadwalan wawancara
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="text-column text-column-centralized tex-column-icon-lg this-animate" data-animate="fadeInRight">
+                                    <div class="text-column-icon">
+                                        <span class="fa fa-microphone"></span>
+                                    </div>
+                                    <h4><strong>INTERVIEW</strong></h4>
+                                    <div class="text-column-info">
+                                        Wawancara dengan pekerja anda akan dilakukan di kantor kami. Jika tidak cocok admin kami akan menjadwalkan wawancara dengan pilihan berikutnya
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- ./page content holder -->
+                </div>
+                <!-- ./page content wrapper -->
+
+                <!-- page content wrapper -->
+                <div class="page-content-wrap bg-light bg-texture-1">
+
+                    <div class="divider"><div class="box"><span class="fa fa-angle-down"></span></div></div>
+
+                    <!-- page content holder -->
+                    <div class="page-content-holder">
+
+                      <div>
+                        <h2>Testimonials    <small> See what our clients have to say about our services! </small></h2>
+                      </div>
+
+                        <div class="row">
+                          <div class="col-lg-4">
+                            <blockquote>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper, quam porttitor iaculis semper, mi enim venenatis ligula,
+                                vel dictum lorem est suscipit nibh. Fusce pulvinar sodales tellus, eget iaculis tellus viverra vel. </p>
+                              <footer>John Doe</footer>
+                            </blockquote>
+                          </div>
+                          <div class="col-lg-4">
+                            <blockquote>
+                              <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                                Fusce rhoncus elit ac nisl hendrerit mattis. Donec tempor urna eros, sed pulvinar purus consectetur vel.  </p>
+                              <footer>Jane Doe</footer>
+                            </blockquote>
+                          </div>
+                            <div class="col-lg-4">
+                            <blockquote>
+                              <p>Nunc ullamcorper risus vitae sem posuere pretium.
+                                Sed molestie diam commodo, placerat nulla sit amet, fermentum nisl. In quis justo vel nunc blandit ullamcorper ac a ex.  </p>
+                              <footer>Jay Doe</footer>
+                            </blockquote>
+                          </div>
+                        </div>
+
+                    </div>
+                    <!-- ./page content holder -->
+                </div>
+                <!-- ./page content wrapper -->
+
+                <!-- page content wrapper -->
+                <div class="page-content-wrap bg-light">
+                    <!-- page content holder -->
+
+                    <!-- ./page content holder -->
+                </div>
+                <!-- ./page content wrapper -->
+            </div>
+            <!-- ./page content -->
+
+            <!-- page footer -->
+            <div class="page-footer">
+
+                <!-- page footer wrap -->
+                <div class="page-footer-wrap bg-dark-gray">
+                    <!-- page footer holder -->
+                    <div class="page-footer-holder page-footer-holder-main">
+
+                        <div class="row">
+
+                            <!-- about -->
+                            <div class="col-md-3">
+                                <h3>About JobCenter.com</h3>
+                                <p>The premiere Indonesian worker search center. Use our search function to easily find the worker you need.</p>
+                            </div>
+                            <!-- ./about -->
+
+                            <!-- quick links -->
+                            <div class="col-md-3">
+                                <h3>Quick links</h3>
+
+                                <div class="list-links">
+                                    <a href="#">Home</a>
+                                    <a href="about.html">About Us</a>
+                                    <a href="contacts.html">Contact Us</a>
+                                    <a href="search.html">Cari Pekerja</a>
+                                </div>
+                            </div>
+                            <!-- ./quick links -->
+
+                            <!-- recent tweets -->
+                            <div class="col-md-3">
+                                <h3>Recent Tweets</h3>
+
+                                <div class="list-with-icon small">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <span class="fa fa-twitter"></span>
+                                        </div>
+                                        <div class="text">
+                                            <a href="#">@JohnDoe</a> We found a nanny for our kids within a week!
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <span class="fa fa-twitter"></span>
+                                        </div>
+                                        <div class="text">
+                                            <a href="#">@Aqvatarius</a> Best service!
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <span class="fa fa-twitter"></span>
+                                        </div>
+                                        <div class="text">
+                                            <a href="#">@StrayDemon</a> Will use JobCenter's service again!
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- ./recent tweets -->
+
+                            <!-- contacts -->
+                            <div class="col-md-3">
+                                <h3>Contacts</h3>
+
+                                <div class="footer-contacts">
+                                    <div class="fc-row">
+                                        <span class="fa fa-home"></span>
+                                        000 StreetName, Suite 111,<br/>
+                                        City Name, ST 01234
+                                    </div>
+                                    <div class="fc-row">
+                                        <span class="fa fa-phone"></span>
+                                        (123) 456-7890
+                                    </div>
+                                    <div class="fc-row">
+                                        <span class="fa fa-envelope"></span>
+                                        <strong>John Doe</strong><br>
+                                        <a href="mailto:#">johndoe@domain.com</a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <!-- ./contacts -->
+
+                        </div>
+
+                    </div>
+                    <!-- ./page footer holder -->
+                </div>
+                <!-- ./page footer wrap -->
+
+                <!-- page footer wrap -->
+                <div class="page-footer-wrap bg-darken-gray">
+                    <!-- page footer holder -->
+                    <div class="page-footer-holder">
+
+                        <!-- copyright -->
+                        <div class="copyright">
+                            &copy; 2016 JobCenter.com - All Rights Reserved
+                        </div>
+                        <!-- ./copyright -->
+
+                        <!-- social links -->
+                        <div class="social-links">
+                            <a href="#"><span class="fa fa-facebook"></span></a>
+                            <a href="#"><span class="fa fa-twitter"></span></a>
+                            <a href="#"><span class="fa fa-google-plus"></span></a>
+                            <a href="#"><span class="fa fa-linkedin"></span></a>
+                        </div>
+                        <!-- ./social links -->
+
+                    </div>
+                    <!-- ./page footer holder -->
+                </div>
+                <!-- ./page footer wrap -->
+
+            </div>
+            <!-- ./page footer -->
 
         </div>
-</div>
+        <!-- ./page container -->
 
+        <!-- page scripts -->
+        <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
 
-	<!--FOOTER-->
-	<div id="footer">
-		<hr>
-		<div class="container text-center">
-			<ul class="list-inline">
-				<li><a href=""> Twitter </a></li>
-				<li><a href=""> Youtube </a></li>
-				<li><a href=""> Facebook </a></li>
-			</ul>
-		</div>
-		<div class="container text-center">
-		<p> &copy; Copyright @ 2016 </p>
-		</div>
-	</div>
+        <script type="text/javascript" src="js/plugins/mixitup/jquery.mixitup.js"></script>
+        <script type="text/javascript" src="js/plugins/appear/jquery.appear.js"></script>
+
+        <script type="text/javascript" src="js/plugins/revolution-slider/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="js/plugins/revolution-slider/jquery.themepunch.revolution.min.js"></script>
+
+        <script type="text/javascript" src="js/actions.js"></script>
+        <script type="text/javascript" src="js/slider.js"></script>
+        <!-- ./page scripts -->
     </body>
-    </html>
+</html>
