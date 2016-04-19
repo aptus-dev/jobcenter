@@ -1,5 +1,15 @@
 var db = angular.module("dbApp", ["firebase"]);
 
+var URL = "https://jobcenter.firebaseio.com";
+
+db.controller("dbHomeController", function($scope, $firebaseArray) {
+  
+  var ref2 = new Firebase(URL);
+  var child2 = ref2.child('labor');
+  $scope.datas = $firebaseArray(child2);
+  
+});
+
 db.controller("dbViewController", function ($scope, $firebaseArray) {
 
   var JOB_URL = "https://jobcenter.firebaseio.com/labor/0001";
@@ -50,7 +60,7 @@ db.controller("dbViewController", function ($scope, $firebaseArray) {
 
 db.controller("dbPushController", function ($scope, $firebaseArray) {
 
-  var URL = "https://jobcenter.firebaseio.com";
+  
   var pushRef = new Firebase(URL);
   var laborRef = pushRef.child("labor");
   //push data into database with unique id
@@ -78,10 +88,9 @@ db.controller("dbPushController", function ($scope, $firebaseArray) {
     "inggris": "tidak",
     "tinggi": "162",
     "berat": "50",
-    "images": [
-      "./Gallery/gadis_1.jpg",
-      "./Gallery/gadis_2.jpg"
-    ]
+    "images": "./Gallery/gadis_1.jpg",
+    "non-halal": "ya",
+    "lembur": "ya"
   });
 
 }); //end of db push controller
