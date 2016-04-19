@@ -50,14 +50,8 @@
             
     });
 
-<<<<<<< HEAD
-    // /*app.controller('loginController', function($scope, $location, $rootScope){
-    //    $scope.submit = function() {
-=======
-    router.controller('loginController', function($scope, $location, $rootScope){
-       $scope.submit = function() {
->>>>>>> 5cb67a993c41b95033b2b69fd28ef77e96a5d459
-           
+    // router.controller('loginController', function($scope, $location, $rootScope){
+    //   $scope.submit = function() {
     //        if($scope.email == '' && $scope.password == '') {
     //            $rootScope.loggedIn = true;
     //            $location.path('admin-index.html');

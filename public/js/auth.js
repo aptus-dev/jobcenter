@@ -61,7 +61,7 @@ app.controller('AuthCtrl', ['$scope', '$rootScope', '$location', '$firebaseAuth'
         $rootScope.alert.class = 'success';
         // $rootScope.alert.message = 'Authenticated successfully with payload: ' + userData.uid;
         $rootScope.loggedIn = true;
-        $location.path('admin-index.html');
+        $location.path('/admin-index');
       }).catch(function(error){
         if (error = 'INVALID_EMAIL') {
           $rootScope.alert.class = 'danger';
