@@ -17,8 +17,8 @@ app.controller('AlertCtrl', [
 ]);
 
 
-app.controller('AuthCtrl', ['$scope', '$rootScope', '$location', '$firebaseAuth',
-  function($scope, $rootScope, $location, $firebaseAuth) {
+app.controller('AuthCtrl', ['$scope', '$rootScope', '$window', '$firebaseAuth',
+  function($scope, $rootScope, $window, $firebaseAuth) {
     var ref = new Firebase('https://jobcenter-id-auth.firebaseio.com');
     $rootScope.auth = $firebaseAuth(ref);
     
@@ -61,7 +61,7 @@ app.controller('AuthCtrl', ['$scope', '$rootScope', '$location', '$firebaseAuth'
         $rootScope.alert.class = 'success';
         // $rootScope.alert.message = 'Authenticated successfully with payload: ' + userData.uid;
         $rootScope.loggedIn = true;
-        $location.path('/admin-index');
+        $window.location.href = 'admin-index.html';
       }).catch(function(error){
         if (error = 'INVALID_EMAIL') {
           $rootScope.alert.class = 'danger';
