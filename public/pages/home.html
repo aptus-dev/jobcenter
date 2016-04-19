@@ -7,11 +7,11 @@
         <p>Mulailah pencarian pekerja dengan memilih kategori dan lokasi</p>
 
         <section>
-				<div class="container text-center">
+				<div class="container text-center" ng-app="dbApp">
 					<form action="" class="form-group">
 						<div class="form-group col-xs-3 col-xs-offset-3">
 							<label for="sel1">Kategori:</label>
-								 <select class="form-control" id="selectcategory">
+								 <select class="form-control" id="selectcategory" ng-model="filterKategori">
 									 <option>Pembantu Rumah Tangga</option>
 									 <option>Pekerja Umum</option>
 									 <option>Pekerja Berketerampilan</option>
@@ -19,7 +19,7 @@
 						</div>
 						<div class="form-group col-xs-3">
 						<label for="sel1">Lokasi:</label>
-								 <select class="form-control" id="selectlocation">
+								 <select class="form-control" id="selectlocation" ng-model="filterLokasi">
 									 <option>Jakarta</option>
 									 <option>Bogor</option>
 									 <option>Depok</option>

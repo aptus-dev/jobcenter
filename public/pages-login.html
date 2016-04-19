@@ -34,10 +34,11 @@
                 <div class="login-body">
                     <div class="login-title"><strong>Welcome</strong>, please login</div>
                     <form class="form-horizontal">
-                    <div class="alert" ng-show="getMessage()">
-                        <b>Alert!</b>
-                        <p>{{ getMessage() }}</p>
-                    </div>
+                        <div class="container" ng-controller="AlertCtrl">
+                            <div class="alert alert-{{alert.class}}" ng-model="alert.message" ng-show="alert.message">
+                                {{alert.message}}
+                            </div>
+                        </div>
                     <div class="form-group">
                         <div class="col-md-12">
                             <input type="text" class="form-control" placeholder="Email" ng-model="email">
@@ -55,13 +56,8 @@
                         <div class="col-md-6">
                             <button class="btn btn-info btn-block" ng-click="authWithPassword()">Log In</button>
                         </div>
-                        <p ng-if="message">Message: <strong>{{ message }}</strong></p>
-                        <p ng-if="error">Error: <strong>{{ error }}</strong></p>
-                        <div class="container" ng-controller="AlertCtrl">
-                            <div class="alert alert-{{alert.class}}" ng-model="alert.message" ng-show="alert.message">
-                                {{alert.message}}
-                            </div>
-                        </div>
+                        <!--<p ng-if="message">Message: <strong>{{ message }}</strong></p>-->
+                        <!--<p ng-if="error">Error: <strong>{{ error }}</strong></p>-->
                     </div>
                     </form>
                 </div>

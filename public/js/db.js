@@ -1,79 +1,87 @@
 var db = angular.module("dbApp", ["firebase"]);
 
-db.controller("dbViewController", function($scope, $firebaseArray){
+db.controller("dbViewController", function ($scope, $firebaseArray) {
 
-var JOB_URL = "https://jobcenter.firebaseio.com/labor/0001";
-var ref = new Firebase(JOB_URL);
-$scope.messages = $firebaseArray(ref);
+  var JOB_URL = "https://jobcenter.firebaseio.com/labor/0001";
+  var ref = new Firebase(JOB_URL);
+  $scope.messages = $firebaseArray(ref);
 
-//var query = ref.orderByChild();
-ref.on("value", function(nameSnap){
-  $scope.nameData = nameSnap.val().name;
-});
-ref.on("value", function(ageSnap){
-  $scope.ageData = ageSnap.val().age;
-});
-ref.on("value", function(expSnap){
-  $scope.expData = expSnap.val().exp;
-});
-ref.on("value", function(gajiSnap){
-  $scope.gajiData = gajiSnap.val().gaji;
-});
-ref.on("value", function(genderSnap){
-  $scope.genderData = genderSnap.val().gender;
-});
-ref.on("value", function(kategoriSnap){
-  $scope.kategoriData = kategoriSnap.val().kategori;
-});
-ref.on("value", function(lokasiSnap){
-  $scope.lokasiData = lokasiSnap.val().lokasi;
-});
-ref.on("value", function(maritalSnap){
-  $scope.maritalData = maritalSnap.val().marital;
-});
-ref.on("value", function(typeSnap){
-  $scope.typeData = typeSnap.val().type;
-});
-ref.on("value", function(statusSnap){
-  $scope.statusData = statusSnap.val().status;
-});
+  //var child = ref.child('0001');
 
-//download data into a local object
-//var syncObject = $firebaseObject(ref);
-//syncObject.$bindTo($scope, "admin");
+  ref.on("value", function (snap) {
+    if (snap.val().kategori === "Rumah Tangga") {
+      $scope.katData = snap.val().kategori;
+      $scope.nameData = snap.val().name;
+      $scope.ageData = snap.val().age;
+      $scope.expData = snap.val().exp;
+      $scope.gajiData = snap.val().gaji;
+      $scope.genderData = snap.val().gender;
+      $scope.lokasiData = snap.val().lokasi;
+      $scope.maritalData = snap.val().marital;
+      $scope.typeData = snap.val().type;
+      $scope.statusData = snap.val().status;
+      $scope.gambarData = snap.val().images;
+    }
+    else {
+      alert("ALERT!");
+    }
+  });
+
+  /*var query = ref.orderByChild();
+  ref.on("value", function(snap){
+    $scope.nameData = snap.val().name;
+    $scope.kategoriData = snap.val().kategori;
+    $scope.ageData = snap.val().age;
+    $scope.expData = snap.val().exp;
+    $scope.gajiData = snap.val().gaji;
+    $scope.genderData = snap.val().gender;
+    $scope.lokasiData = snap.val().lokasi;
+    $scope.maritalData = snap.val().marital;
+    $scope.typeData = snap.val().type;
+    $scope.statusData = snap.val().status;
+  });
+  */
+
+  //download data into a local object
+  //var syncObject = $firebaseObject(ref);
+  //syncObject.$bindTo($scope, "admin");
 
 }); //end of db view controller
 
-db.controller("dbPushController", function($scope, $firebaseArray){
+db.controller("dbPushController", function ($scope, $firebaseArray) {
 
   var URL = "https://jobcenter.firebaseio.com";
   var pushRef = new Firebase(URL);
   var laborRef = pushRef.child("labor");
   //push data into database with unique id
   laborRef.push({
-    "nama": "Tito Rosmini",
-    "tanggallahir": "27-05-1988",
-    "asal": "Probolinggo",
-    "alamat": "pondok kopi",
-    "lokasi": "Jakarta Timur",
+    "nama": "Maryati",
+    "tanggallahir": "27/04/1985",
+    "asal": "Padang Panjang",
+    "alamat": "Depok 2",
+    "lokasi": "Depok",
     "kategori": "Rumah Tangga",
-    "profesi": "Sopir",
+    "profesi": "Nanny",
     "tersedia": "ya",
-    "gender": "Laki-laki",
-    "waktu": "pulang-pergi",
-    "pendidikan": "SMA",
-    "status": "Menikah",
-    "anak": "1",
+    "gender": "Perempuan",
+    "waktu": "Menginap",
+    "pendidikan": "SD",
+    "status": "Lajang",
+    "anak": "0",
     "agama": "Islam",
-    "suku": "Jawa",
-    "gaji": "2.000.000",
-    "ketrampilan": "mengendarai truk",
-    "anjing": "tidak",
-    "pengalaman": "5",
+    "suku": "Padang",
+    "gaji": "2.700.000",
+    "ketrampilan": "memasak, mencuci",
+    "anjing": "ya",
+    "pengalaman": "7",
     "luarnegri": "tidak",
     "inggris": "tidak",
-    "tinggi": "165",
-    "berat": "65"
+    "tinggi": "162",
+    "berat": "50",
+    "images": [
+      "./Gallery/gadis_1.jpg",
+      "./Gallery/gadis_2.jpg"
+    ]
   });
 
 }); //end of db push controller

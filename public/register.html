@@ -83,9 +83,13 @@
           <br><br>
         
           <button ng-click="removeUser()">Remove User</button>
-        
-          <p ng-if="message">Message: <strong>{{ message }}</strong></p>
-          <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+          <div class="container" ng-controller="AlertCtrl">
+            <div class="alert alert-{{alert.class}}" ng-model="alert.message" ng-show="alert.message">
+              {{alert.message}}
+            </div>
+          </div>
+          <!--<p ng-if="alert.message">Message: <strong>{{ alert.message }}</strong></p>-->
+          <!--<p ng-if="error">Error: <strong>{{ error }}</strong></p>-->
         </div>
     </div>
 

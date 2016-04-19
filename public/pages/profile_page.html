@@ -21,7 +21,7 @@
   <!--NAVBAR style-->
      <link rel="stylesheet" href="../css/navbar.css">
 
-<title></title>
+<title>PROFILE</title>
 </head>
 <body ng-controller="dbViewController">
 
@@ -44,18 +44,19 @@
   <div class="jumbotron text-center">
     <div class="container">
       <h1>{{nameData}}</h1>
-       <p>{{typeData}} | {{lokasiData}} | {{statusData}}</p>
+       <p>{{katData}} | {{lokasiData}} | {{statusData}}</p>
+       
     </div>
   </div>
        <hr>
 
    <div class="container">
-     <section>
+     <section></section>
     </div>
 
     <div class="row">
       <div class="col-sm-4 col-sm-offset-1">
-        </section>
+        
         <div clas="container">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#Home" data-toggle="tab">Home</a></li>
@@ -67,7 +68,7 @@
                 <div class="panel panel-default panel-info" col-sm-4>
                   <div class="panel-body">
                     <p align="left">Eriyanti asal Lampung,siap mengasuh anak balita,jujur,rajin,terampil,
-                       bersertifikat suster,siap kerja hari ini...
+                       bersertifikat suster,siap kerja hari ini...></p>
                   </div>
                     <li class="list-group-item" align="left">Umur {{ageData}} tahun</li>
                     <li class="list-group-item" align="left">Perlu surat SKCK</li>
@@ -94,11 +95,11 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="../Gallery/gadis_1.jpg" alt="1.jpg">
+						<img src="{{gambarData}}">
 					</div>
-					<div class="item">
-						<img src="../Gallery/gadis_2.jpg" alt="2.jpg">
-			    </div>
+					<div class="item" ng-repeat="gambar in gambarData">
+						<img src="{{gambar}}" alt="2.jpg">
+			    </div>  
         </div>
         <a href="#screenshot-carousel" class="left carousel control" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left"></span>
