@@ -46,18 +46,7 @@ db.controller("dbViewController", function ($scope, $firebaseArray) {
   });
 
   /*var query = ref.orderByChild();
-  ref.on("value", function(snap){
-    $scope.nameData = snap.val().name;
-    $scope.kategoriData = snap.val().kategori;
-    $scope.ageData = snap.val().age;
-    $scope.expData = snap.val().exp;
-    $scope.gajiData = snap.val().gaji;
-    $scope.genderData = snap.val().gender;
-    $scope.lokasiData = snap.val().lokasi;
-    $scope.maritalData = snap.val().marital;
-    $scope.typeData = snap.val().type;
-    $scope.statusData = snap.val().status;
-  });
+  
   */
 
   //download data into a local object
@@ -66,8 +55,15 @@ db.controller("dbViewController", function ($scope, $firebaseArray) {
 
 }); //end of db view controller
 
-db.controller("dbPushController", function ($scope, $firebaseArray) {
+db.controller("branchViewController", function($scope, $firebaseArray) {
+  
+  var ref = new Firebase(URL);
+  var child = ref.child("branch");
+  $scope.branches = $firebaseArray(child);
+  
+}); // end of branch view controller
 
+db.controller("dbPushController", function ($scope, $firebaseArray) {
   
   var pushRef = new Firebase(URL);
   var laborRef = pushRef.child("labor");
@@ -102,6 +98,20 @@ db.controller("dbPushController", function ($scope, $firebaseArray) {
   });
 
 }); //end of db push controller
+
+db.controller("branchPushController", function () {
+  
+  var ref = new Firebase(URL);
+  var branchRef = ref.child("branch");
+  //push data into database with unique id
+  branchRef.push({
+    "nama": "Kantor Pusat Jakarta",
+    "alamat": "Jl. Wolter Monginsidi no. 72",
+    "kecamatan": "Jakarta Selatan",
+    "telp": "021-4506586",
+  });
+
+}); //end of branch push controller
 
 /* push() function
 
