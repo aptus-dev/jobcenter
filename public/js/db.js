@@ -1,12 +1,12 @@
 var db = angular.module("dbApp", ["firebase"]);
 
-var URL = "https://jobcenter.firebaseio.com";
+var URL = "https://jobcenter.firebaseio.com/";
 
 db.controller("searchController", function($scope, $firebaseArray) {
   
-  var ref2 = new Firebase(URL);
-  var child = ref2.child("labor");
-  $scope.datas = $firebaseArray(child);
+  var ref2 = new Firebase(URL + 'labor');
+//  var child = ref2.child("labor");
+  $scope.datas = $firebaseArray(ref2);
   
   $scope.filter = {};
   $scope.input = {};
@@ -18,7 +18,7 @@ db.controller("searchController", function($scope, $firebaseArray) {
   
 });
 
-db.controller("dbViewController", function ($scope, $firebaseArray) {
+db.controller("profileViewController", function ($scope, $firebaseArray) {
 
   var JOB_URL = "https://jobcenter.firebaseio.com/labor/0001";
   var ref = new Firebase(JOB_URL);
@@ -57,18 +57,18 @@ db.controller("dbViewController", function ($scope, $firebaseArray) {
 
 db.controller("branchViewController", function($scope, $firebaseArray) {
   
-  var ref = new Firebase(URL);
-  var child = ref.child("branch");
-  $scope.branches = $firebaseArray(child);
+  var ref = new Firebase(URL + "branch");
+//  var child = ref.child("branch");
+  $scope.branches = $firebaseArray(ref);
   
 }); // end of branch view controller
 
-db.controller("dbPushController", function ($scope, $firebaseArray) {
+db.controller("laborPushController", function ($scope, $firebaseArray) {
   
-  var pushRef = new Firebase(URL);
-  var laborRef = pushRef.child("labor");
+  var pushRef = new Firebase(URL + 'labor');
+//  var laborRef = pushRef.child("labor");
   //push data into database with unique id
-  laborRef.push({
+  pushRef.push({
     "nama": "Maryati",
     "tanggallahir": "27/04/1985",
     "asal": "Padang Panjang",
@@ -101,16 +101,21 @@ db.controller("dbPushController", function ($scope, $firebaseArray) {
 
 db.controller("branchPushController", function () {
   
-  var ref = new Firebase(URL);
-  var branchRef = ref.child("branch");
+  var ref = new Firebase(URL + 'branch');
+  this.review = {};
+  this.add = function(ref){
+    ref.push(this.review);
+    this.review = {};
+  };
+//  var branchRef = ref.child("branch");
   //push data into database with unique id
-  branchRef.push({
+/*  ref.push({
     "nama": "Kantor Pusat Jakarta",
     "alamat": "Jl. Wolter Monginsidi no. 72",
-    "kecamatan": "Jakarta Selatan",
+    "kotamadya": "Jakarta Selatan",
     "telp": "021-4506586",
   });
-
+*/
 }); //end of branch push controller
 
 /* push() function
