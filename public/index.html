@@ -13,7 +13,7 @@
 
         <link rel="stylesheet" type="text/css" href="./css/styles.css" media="screen" />
 
-        <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="css/jumbotron.css"/>
 
 
     </head>
@@ -42,8 +42,6 @@
 
                     <!-- navigation -->
                     <ul class="navigation">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
                         <li><a href="contacts.html">Contact Us</a></li>
                         <li><a href="search.html">Cari Pekerja</a></li>
                         <li class = "pull-right"><a href="pages-login.html"><span class="fa fa-eye"></span></a></li>
@@ -61,131 +59,56 @@
             <div class="page-content">
 
 
-                <!-- revolution slider -->
-                <div class="banner-container">
-                    <div class="banner">
-
-                        <ul>
-                            <li data-transition="fade" data-slotamount="1" data-masterspeed="700" >
-                                <img src="assets/video/video_typing_cover.jpg"  alt="video_typing_cover"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                                <div class="tp-caption tp-fade fadeout fullscreenvideo"
-                                    data-x="0"
-                                    data-y="0"
-                                    data-speed="1000"
-                                    data-start="1100"
-                                    data-easing="Power4.easeOut"
-                                    data-elementdelay="0.01"
-                                    data-endelementdelay="0.01"
-                                    data-endspeed="1500"
-                                    data-endeasing="Power4.easeIn"
-                                    data-autoplay="true"
-                                    data-autoplayonlyfirsttime="false"
-                                    data-nextslideatend="true"
-                                    data-volume="mute" data-forceCover="1" data-aspectratio="16:9" data-forcerewind="on" style="z-index: 2;">
-
-                                    <video class="" preload="none" width="100%" height="100%" poster="assets/video/video_typing_cover.jpg">
-                                        <source src='assets/video/computer_typing.mp4' type='video/mp4'/>
-                                        <source src='assets/video/computer_typing.webm' type='video/webm'/>
-                                    </video>
+                <!-- Carousel slider -->
+            <div class="banner-container">
+                <div id="myCarousel" class="carousel slide">
+                    
+                      <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="./img/backgrounds/LP1.jpg">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                <h1>Mencari pekerja tidak pernah semudah ini</h1>
+                                <p class="lead">Berbagai jenis pekerja di lebih dari 200 lokasi di pulau Jawa.</p>
+                                <a class="btn btn-large btn-primary" href="#">Sign up today</a>
                                 </div>
-
-                                <div class="tp-caption customin ltl"
-                                        data-x="300"
-                                        data-y="200"
-                                        data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                                        data-speed="500"
-                                        data-start="1500"
-                                        data-easing="Power4.easeInOut"
-                                        data-splitin="none"
-                                        data-splitout="none"
-                                        data-elementdelay="0.01"
-                                        data-endelementdelay="0.1"
-                                        data-endspeed="1000"
-                                        data-endeasing="Power4.easeIn"
-                                        style="z-index: 3;">
-                                        <div>
-                                        <h1><strong>Cari dengan mudah</strong></h1>
-                                            <div>
-                                                <p>Biggest worker agency in Indonesia. </p>
-                                                <p>Provides the most diverse types of workers in Java.</p>
-                                            </div>
-                                        </div>
+                            </div>
+                        </div>
+                        
+                        <div class="item">
+                            <img src="./img/backgrounds/LP2.jpg">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                <h1>Cari dengan mudah.</h1>
+                                <p class="lead">Biggest worker's agency in Indonesia</p>
+                                <a class="btn btn-large btn-primary" href="#">Learn more</a>
                                 </div>
-
-
-                            </li>
-                            
-                            <li data-transition="fade" data-slotamount="1" data-masterspeed="500"  data-saveperformance="on">
-                                <img src="img/backgrounds/photo-jumbo.jpg" />
-
-                                <div class="tp-caption lft customout rs-parallaxlevel-0"
-                                    data-x="0"
-                                    data-y="150"
-                                    data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                    data-speed="500"
-                                    data-start="700"
-                                    data-easing="Power3.easeInOut"
-                                    data-elementdelay="500"
-                                    data-endelementdelay="500"
-                                    style="z-index: 2;">
-                                    <div class="container text-center">
-                                        <div class="row">
-                                        <h1><strong>Mau Cari Pekerja?</strong></h1>
-                                            <p>Anda terlalu sibuk dan tidak sempat memelihara rumah atau tempat anda?</p>
-                                            <p>Mulailah pencarian pekerja dengan memilih kategori dan lokasi</p>
-                                        </div>
-                                        <br>
-                                   <!--     <div class="row" ng-app="dbApp">
-                                        <form action="" class="form-group" ng-controller="searchController">
-                                            <div class="form-group col-xs-3 col-xs-offset-3">
-                                                <label for="sel1">Kategori:</label>
-                                                    <select class="form-control" id="selectcategory" ng-model="input.kategori">
-                                                        <option>Pembantu Rumah Tangga</option>
-                                                        <option>Pekerja Umum</option>
-                                                        <option>Pekerja Berketerampilan</option>
-                                                    </select>
-                                            </div>
-                                            <div class="form-group col-xs-3">
-                                            <label for="sel1">Lokasi:</label>
-                                                    <select class="form-control" id="selectlocation" ng-model="input.lokasi">
-                                                        <option>Jakarta Utara</option>
-                                                        <option>Jakarta Timur</option>
-                                                        <option>Jakarta Barat</option>
-                                                        <option>Jakarta Selatan</option>
-                                                        <option>Jakarta Pusat</option>
-                                                        <option>Bogor</option>
-                                                        <option>Depok</option>
-                                                        <option>Tanggerang</option>
-                                                        <option>Bekasi</option>
-                                                    </select>
-                                            </div>
-                                            <div class="form-group col-xs-3">
-                                                <br>
-                                            </div>
-                                        </form>
-                                    </div>  END Container-->
-                                    <div class="row">
-                                    <button type="submit" class="btn btn-primary" align="center" onclick="location.href='search.html'">Cari Sekarang!</button>
-                                    </div>
+                            </div>
+                        </div>
+                        
+                        <div class="item">
+                            <img src="./img/backgrounds/LP3.jpg">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                <h1>Mau cari pekerja?</h1>
+                                <p class="lead">Mulailah pencarian pekerja dengan memilih kategori dan lokasi</p>
+                                <a class="btn btn-large btn-primary" href="search.html">Cari Pekerja</a>
                                 </div>
-
-                            </li>
-
-                            
-                        </ul>
-
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- ./revolution slider -->
-
-                <!-- page content wrapper -->
+                </div>  
+            </div><!-- /.carousel -->
                 <div class="page-content-wrap bg-img-1">
-
-
                     <!-- page content holder -->
                     <div class="page-content-holder">
-
                         <div class="row">
                             <div class="col-md-8 this-animate" data-animate="fadeInLeft">
 
@@ -203,9 +126,6 @@
                                 <img src="assets/atlant_responsive.png" class="img-responsive-mobile"/>
                             </div>
                         </div>
-
-
-
                     </div>
                     <!-- ./page content holder -->
                 </div>
@@ -249,7 +169,7 @@
                             <div class="col-md-4">
                                 <div class="text-column text-column-centralized tex-column-icon-lg this-animate" data-animate="fadeInRight">
                                     <div class="text-column-icon">
-                                        <span class="fa fa-microphone"></span>
+                                        <span class="fa fa-clipboard "></span>
                                     </div>
                                     <h4><strong>INTERVIEW</strong></h4>
                                     <div class="text-column-info">
@@ -274,7 +194,7 @@
                     <div class="page-content-holder">
 
                       <div>
-                        <h2>Testimonials    <small> See what our clients have to say about our services! </small></h2>
+                        <h2>About Us    <small> See what our clients have to say about our services! </small></h2>
                       </div>
 
                         <div class="row">
