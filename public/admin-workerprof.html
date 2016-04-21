@@ -1,118 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- META SECTION -->
-        <title>Super Admin: Worker Profiles</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
-        <!-- END META SECTION -->
+<head>
+  <!-- META SECTION -->
+  <title>Super Admin: Worker Profiles</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- CSS INCLUDE -->
-        <link rel="stylesheet" type="text/css" id="theme" href="./css/admin-css/theme-default.css"/>
-        <link rel="stylesheet" type="text/css" href="./css/bootstrap/admin-css/bootstrap.min.css"/>
-        <!-- EOF CSS INCLUDE -->
-    </head>
-    <body>
-    <!-- START PAGE CONTAINER -->
-    <div class="page-container">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- END META SECTION -->
 
-      <!-- START PAGE SIDEBAR -->
-      <div class="page-sidebar">
-        <ul class="x-navigation">
-            <li class="text-center">
-                <a href="index.html">JobCenter</a>
-                <a href="#" class="x-navigation-control"></a>
-            </li>
-            <li class="xn-profile">
-                <a href="#" class="profile-mini">
-                    <img src="./img/daler.jpg" alt="Daler Mehndi"/>
-                </a>
-                <div class="profile">
-                    <div class="profile-image">
-                        <img src="./img/daler.jpg" alt="Daler Mehndi"/>
-                    </div>
-                    <div class="profile-data">
-                        <div class="profile-data-name">Daler Mehndi</div>
-                        <div class="profile-data-title">Indian Overlord</div>
-                    </div>
-                </div>
-            </li>
-            <li class="xn-title">Navigation</li>
-            <li>
-                <a href="admin-index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
-            </li>
-                <li><a href="admin-prof.html"><span class="fa fa-user"></span> <span class="xn-text">Admin Profiles</span></a></li>
-                <li class="active"><a href="admin-workerprof.html"><span class="fa fa-users"></span> <span class="xn-text">Worker Profiles</span></a></li>
-                <li><a href="admin-offices.html"><span class="glyphicon glyphicon-tower"></span> <span class="xn-text">Branch Offices</span></a></li>
+  <!-- CSS INCLUDE -->
+  <link rel="stylesheet" type="text/css" id="theme" href="./css/admin-css/theme-default.css" />
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap/admin-css/bootstrap.min.css" />
+  <!-- EOF CSS INCLUDE -->
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+  <script type="text/javascript" src="./js/jquery.alphanum.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="./js/db.js"></script>
 
-        </ul>
-        <!-- END X-NAVIGATION -->
-      </div>
-      <!-- END PAGE SIDEBAR -->
+</head>
 
-      <!-- PAGE CONTENT -->
-                <div class="page-content">
+<body ng-app="mainApp">
+  <!-- START PAGE CONTAINER -->
+  <div class="page-container">
 
-                    <!-- START X-NAVIGATION VERTICAL -->
-                    <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
-                        <!-- TOGGLE NAVIGATION -->
-                        <li class="xn-icon-button">
-                            <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
-                        </li>
-                        <!-- END TOGGLE NAVIGATION -->
-                        <!-- SIGN OUT -->
-                        <li class="xn-icon-button pull-right">
-                            <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
-                        </li>
-                        <!-- END SIGN OUT -->
-                    </ul><!-- END X-NAVIGATION VERTICAL -->
-                    <!-- START BREADCRUMB -->
-                    <ul class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li class="active">Worker Profiles</li>
-                    </ul>
-                    <!-- END BREADCRUMB -->
-                    <!-- PAGE CONTENT WRAPPER -->
-                    <div class="page-content-wrap">
-                      <!-- START IMG -->
+    <!-- START PAGE SIDEBAR -->
+    <div class="page-sidebar">
+      <ul class="x-navigation">
+        <li class="text-center">
+          <a href="index.html">JobCenter</a>
+          <a href="#" class="x-navigation-control"></a>
+        </li>
+        <li class="xn-profile">
+          <a href="#" class="profile-mini">
+            <img src="./img/daler.jpg" alt="Daler Mehndi" />
+          </a>
+          <div class="profile">
+            <div class="profile-image">
+              <img src="./img/daler.jpg" alt="Daler Mehndi" />
+            </div>
+            <div class="profile-data">
+              <div class="profile-data-name">Daler Mehndi</div>
+              <div class="profile-data-title">Indian Overlord</div>
+            </div>
+          </div>
+        </li>
+        <li class="xn-title">Navigation</li>
+        <li>
+          <a href="admin-index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
+        </li>
+        <li><a href="admin-prof.html"><span class="fa fa-user"></span> <span class="xn-text">Admin Profiles</span></a></li>
+        <li class="active"><a href="admin-workerprof.html"><span class="fa fa-users"></span> <span class="xn-text">Worker Profiles</span></a></li>
+        <li><a href="admin-offices.html"><span class="glyphicon glyphicon-tower"></span> <span class="xn-text">Branch Offices</span></a></li>
 
-
-                            <!-- START WORKER PROFILE -->
-                            
-                                             <!-- filter -->
-  <div class="container">
-    <div class="row">
-    <h2 class="col-sm-3 text-left">Filter:</h2>
-    <a href="#" class="btn btn-danger col-sm-offset-7">
-      <span class="glyphicon glyphicon-plus-sign"></span> Add Worker
-    </a>
+      </ul>
+      <!-- END X-NAVIGATION -->
     </div>
-    <div class="well" style="max-height: 400px;overflow: auto;">
-      <div class="col-xs-3">
-        <div class="form-group">
-         <label for="sel1">Kategori:</label>
-         <select class="form-control" id="kategori">
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+      <!-- START X-NAVIGATION VERTICAL -->
+      <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+        <!-- TOGGLE NAVIGATION -->
+        <li class="xn-icon-button">
+          <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+        </li>
+        <!-- END TOGGLE NAVIGATION -->
+        <!-- SIGN OUT -->
+        <li class="xn-icon-button pull-right">
+          <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+        </li>
+        <!-- END SIGN OUT -->
+      </ul>
+      <!-- END X-NAVIGATION VERTICAL -->
+      <!-- START BREADCRUMB -->
+      <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li class="active">Worker Profiles</li>
+      </ul>
+      <!-- END BREADCRUMB -->
+      <!-- PAGE CONTENT WRAPPER -->
+      <div class="page-content-wrap">
+        <!-- START IMG -->
+
+
+        <!-- START WORKER PROFILE -->
+
+        <!-- filter -->
+        <div class="container">
+          <div class="row">
+            <h2 class="col-sm-3 text-left">Filter:</h2>
+            <a href="#" class="btn btn-danger col-sm-offset-7">
+              <span class="glyphicon glyphicon-plus-sign"></span> Add Worker
+            </a>
+          </div>
+          <div class="well" style="max-height: 400px;overflow: auto;">
+            <div class="col-xs-3">
+              <div class="form-group">
+                <label for="sel1">Kategori:</label>
+                <select class="form-control" id="kategori">
            <option>Select</option>
            <option>Rumah Tangga</option>
            <option>Pekerja Umum</option>
            <option>Pekerja Berketrampilan</option>
          </select>
-       </div>
-        <div class="form-group">
-         <label for="sel2">Status:</label>
-         <select class="form-control" id="status">
+              </div>
+              <div class="form-group">
+                <label for="sel2">Status:</label>
+                <select class="form-control" id="status">
            <option>Select</option>
            <option>Lajang</option>
            <option>Menikah</option>
            <option>Janda / Duda</option>
            </select>
-       </div>
-       <div class="form-group">
-        <label for="sel6">Agama:</label>
-        <select class="form-control" id="agama">
+              </div>
+              <div class="form-group">
+                <label for="sel6">Agama:</label>
+                <select class="form-control" id="agama">
           <option>Select</option>
           <option>Islam</option>
           <option>Katolik</option>
@@ -121,22 +133,22 @@
           <option>Budha</option>
           <option>Lainnya</option>
         </select>
-      </div>
-      <div class="form-group">
-       <label for="sel1">Waktu:</label>
-       <select class="form-control" id="waktu">
+              </div>
+              <div class="form-group">
+                <label for="sel1">Waktu:</label>
+                <select class="form-control" id="waktu">
          <option>Select</option>
          <option>Menginap</option>
          <option>Infal</option>
          <option>Pulang-Pergi</option>
        </select>
-     </div>
-    </div>
+              </div>
+            </div>
 
-    <div class="col-xs-3">
-      <div class="form-group">
-       <label for="sel3">Lokasi Cabang:</label>
-       <select class="form-control" id="lokasi">
+            <div class="col-xs-3">
+              <div class="form-group">
+                <label for="sel3">Lokasi Cabang:</label>
+                <select class="form-control" id="lokasi">
          <option>Select</option>
          <option>Jakarta</option>
          <option>Bandung</option>
@@ -175,10 +187,10 @@
          <option>Tegal</option>
          <option>Yogyakarta</option>
        </select>
-     </div>
-      <div class="form-group">
-       <label for="sel4">Gaji Bulanan(min):</label>
-       <select class="form-control" id="gajimin">
+              </div>
+              <div class="form-group">
+                <label for="sel4">Gaji Bulanan(min):</label>
+                <select class="form-control" id="gajimin">
          <option>Select</option>
          <option>Rp 1,000,000</option>
          <option>Rp 1,100,000</option>
@@ -207,10 +219,10 @@
          <option>Rp 3,400,000</option>
          <option>Rp 3,500,000</option>
        </select>
-     </div>
-     <div class="form-group">
-      <label for="sel1">Suku Asal:</label>
-      <select class="form-control" id="suku">
+              </div>
+              <div class="form-group">
+                <label for="sel1">Suku Asal:</label>
+                <select class="form-control" id="suku">
         <option>Select</option>
         <option>Jawa</option>
         <option>Sunda</option>
@@ -223,13 +235,13 @@
         <option>Melayu</option>
         <option>Lainnya</option>
       </select>
-    </div>
-  </div>
+              </div>
+            </div>
 
-  <div class="col-xs-3">
-    <div class="form-group">
-     <label for="sel5">Profesi:</label>
-     <select class="form-control" id="profesi">
+            <div class="col-xs-3">
+              <div class="form-group">
+                <label for="sel5">Profesi:</label>
+                <select class="form-control" id="profesi">
        <option>Select</option>
        <option>P.R.T.</option>
        <option>Nanny</option>
@@ -240,10 +252,10 @@
        <option>Pekerja Umum</option>
        <option>Pekerja Beketrampilan</option>
      </select>
-   </div>
-   <div class="form-group">
-    <label for="sel4">Gaji Bulanan(max):</label>
-    <select class="form-control" id="gajimax">
+              </div>
+              <div class="form-group">
+                <label for="sel4">Gaji Bulanan(max):</label>
+                <select class="form-control" id="gajimax">
       <option>Select</option>
       <option>Rp 1,000,000</option>
       <option>Rp 1,100,000</option>
@@ -272,10 +284,10 @@
       <option>Rp 3,400,000</option>
       <option>Rp 3,500,000</option>
     </select>
-  </div>
-   <div class="form-group">
-    <label for="sel2">Usia (min):</label>
-    <select class="form-control" id="usiamin">
+              </div>
+              <div class="form-group">
+                <label for="sel2">Usia (min):</label>
+                <select class="form-control" id="usiamin">
       <option>Select</option>
       <option>17</option>
       <option>18</option>
@@ -317,31 +329,31 @@
       <option>54</option>
       <option>55</option>
     </select>
-  </div>
-</div>
+              </div>
+            </div>
 
-<div class="col-xs-3">
-  <div class="form-group">
-   <label for="sel7">Jenis Kelamin:</label>
-   <select class="form-control" id="gender">
+            <div class="col-xs-3">
+              <div class="form-group">
+                <label for="sel7">Jenis Kelamin:</label>
+                <select class="form-control" id="gender">
      <option>Select</option>
      <option>Pria</option>
      <option>Wanita</option>
    </select>
- </div>
- <div class="form-group">
-  <label for="sel7">Pendidikan Terakhir:</label>
-  <select class="form-control" id="pendidikan">
+              </div>
+              <div class="form-group">
+                <label for="sel7">Pendidikan Terakhir:</label>
+                <select class="form-control" id="pendidikan">
     <option>Select</option>
     <option>SD</option>
     <option>SMP</option>
     <option>SMA</option>
     <option>Perguruan Tinggi</option>
   </select>
-</div>
-<div class="form-group">
- <label for="sel2">Usia (max):</label>
- <select class="form-control" id="usiamax">
+              </div>
+              <div class="form-group">
+                <label for="sel2">Usia (max):</label>
+                <select class="form-control" id="usiamax">
    <option>Select</option>
    <option>17</option>
    <option>18</option>
@@ -383,332 +395,406 @@
    <option>54</option>
    <option>55</option>
  </select>
-</div>
-<br>
-
-</div>
-<a href="#" class="btn btn-primary pull-right">
-      <span class="glyphicon glyphicon-filter"></span> Filter
-    </a>
-  </div>
-</div>
-<!--end of filter-->
-
-<!--RESULTS-->
-                      <div class="container">
-                        <h3>Search Results:</h3>
-                        <br>
-                      <div class="container">
-                       <div class="col-lg-4">
-                              <img src="gadis_1.jpg" class="image-responsive" alt="image" style="max-height:30px;"></img>
-                              <a href ="" class="">Stefani</a>
-                            </div>
-                            <div class="col-lg-4">
-                               <div class="container text-center">
-                                  <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> Bogor</span>
-                              </div>
-                            </div>
-                            <div class="col-lg-4">
-                              <h5 class="title">Nanny</h5>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="container">
-                           <div class="col-lg-4">
-                            <img src="gadis_2.jpg" class="image-responsive" alt="image" style="max-height:30px;"></img>
-                            <a href ="" class="">Michele</a>
-                          </div>
-                          <div class="col-lg-4">
-                              <div class="container text-center">
-                                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> Bogor</span>
-                            </div>
-                          </div>
-                          <div class="col-lg-4">
-                            <h5 class="title">Baby Sitter</h5>
-                          </div>
-                          </div>
-                          <br>
-                          <hr>
-                      </div>
-
-<!--/RESULTS-->
-                            <div class="container">
-                              <div class="row">
-                            <form action="" class="form-horizontal col-lg-5 col-sm-offset-1">
-                              <div class="form-group">
-                      					<label for="user-unique" class="col-lg-3 control-label">Unique ID</label>
-                      					<div class="col-sm-8">
-                      						<p type="text" class="form-control" id="user-unique" placeholder="Unique ID">Unique ID</p>
-                      					</div>
-                      				</div>
-
-                      				<div class="form-group">
-                      					<label for="user-name" class="col-lg-3 control-label">Nama</label>
-                      					<div class="col-lg-8">
-                      						<input type="text" class="form-control" id="user-name" placeholder="Masukkan Nama">
-                      					</div>
-                      				</div>
-                         ​
-                      				<div class="form-group">
-                      					<label for="user-address" class="col-lg-3 control-label">Alamat</label>
-                      					<div class="col-lg-8">
-                      						<textarea class="form-control" id="user-address" rows="5"></textarea>
-                      					</div>
-                      				</div>
-                      ​
-                      <div class="form-group">
-                        <label for="user-status" class="col-lg-3 control-label">Status</label>
-                         <div class="col-sm-8">
-                        <select class="form-control" id="status">
-                          <option>Semua</option>
-                          <option>Lajang</option>
-                          <option>Menikah</option>
-                          <option>Janda</option>
-                          <option>Duda</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!--<div class="form-group">
-                      					<label for="user-status" class="col-lg-3 control-label">Status</label>
-                      					<div class="col-sm-8">
-                      						<input type="text" class="form-control" id="user-status" placeholder="Status">
-                      					</div>
-                      				</div>-->
-                      ​
-                      				<div class="form-group">
-                      					<label for="user-telp" class="col-lg-3 control-label">Tel./Handphone</label>
-                      					<div class="col-sm-8">
-                      						<input type="text" class="form-control" id="user-telp" placeholder="Masukkan Nomor Telephone/Handphone">
-                      					</div>
-                      				</div>
-                      ​
-
-                        <div class="form-group">
-                          <label for="user-agama" class="col-lg-3 control-label">Agama</label>
-                           <div class="col-sm-8">
-                          <select class="form-control" id="agama">
-                            <option>Semua</option>
-                            <option>Islam</option>
-                            <option>Kristen</option>
-                            <option>Hindu</option>
-                            <option>Budha</option>
-                            </select>
-                          </div>
-                        </div>
-                      <!--<div class="form-group">
-                        <label for="user-agama" class="col-lg-3 control-label">Agama</label>
-                      <div class="col-sm-8">
-                          <input type="text" class="form-control" id="user-agama" placeholder="Agama">
-                        </div>
-                      </div>-->
-
-                        <div class="form-group">
-                          <label for="user-gender" class="col-lg-3 control-label">Gender</label>
-                           <div class="col-sm-8">
-                          <select class="form-control" id="gender">
-                            <option>Semua</option>
-                            <option>Laki-laki</option>
-                            <option>Perempuan</option>
-                            <option>Other</option>
-                            </select>
-                          </div>
-                        </div>
-                        
-                      <div class="form-group">
-                        <label for="user-edu" class="col-lg-3 control-label">Pendidikan terakhir</label>
-                         <div class="col-sm-8">
-                        <select class="form-control" id="edu">
-                          <option>Semua</option>
-                          <option>SD</option>
-                          <option>SMP</option>
-                          <option>SMU/SMK</option>
-                          <option>D3/Sarjana</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!--  <div class="form-group">
-                        <label for="user-edu" class="col-lg-3 control-label">Pendidikan Terakhir</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="user-edu" placeholder="Pendidikan Terakhir">
-                        </div>
-                      </div>-->
-
-                      <div class="form-group">
-                        <label for="user-exp" class="col-lg-3 control-label">Pengalaman Kerja</label>
-                         <div class="col-sm-8">
-                        <select class="form-control" id="exp">
-                          <option>Semua</option>
-                          <option>1 tahun</option>
-                          <option>2 tahun</option>
-                          <option>3 tahun</option>
-                          <option>4 tahun</option>
-                          <option>5 tahun/lebih</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!--<div class="form-group">
-                        <label for="user-exp" class="col-lg-3 control-label">Pengalaman Kerja</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="user-exp" placeholder="Pengalaman Kerja">
-                        </div>
-                      </div>-->
-
-                      <div class="form-group">
-                        <label for="user-abroad" class="col-lg-3 control-label">Pengalaman Kerja Luar Negeri</label>
-                         <div class="col-sm-8">
-                        <select class="form-control" id="abroad">
-                          <option>Ya</option>
-                          <option>Tidak</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!--<div class="form-group">
-                        <label for="user-abroad" class="col-lg-3 control-label">Pengalaman Kerja Luar Negeri</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="user-abroad" placeholder="">
-                        </div>
-                      </div>-->
-
-                      <div class="form-group">
-                        <label for="user-suku" class="col-lg-3 control-label">Suku</label>
-                         <div class="col-sm-8">
-                        <select class="form-control" id="suku">
-                          <option>Semua</option>
-                          <option>Jawa</option>
-                          <option>Sunda</option>
-                          <option>Batak</option>
-                          <option>Bali</option>
-                          <option>NTT/NTB</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!--<div class="form-group">
-                        <label for="user-suku" class="col-lg-3 control-label">Suku</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="user-suku" placeholder="Suku">
-                        </div>
-                      </div>-->
-
-                      <div class="form-group">
-                        <label for="user-tinggi" class="col-lg-3 control-label">Tinggi</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="user-tinggi" placeholder="Centimeter">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="user-berat" class="col-lg-3 control-label">Berat</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="user-berat" placeholder="Kilogram">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="user-bahasa" class="col-lg-3 control-label" >Keterampilan Bahasa</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="user-bahasa" placeholder="Keterampilan Bahasa">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label for="user-waktu" class="col-lg-3 control-label">Waktu Ketersediaan</label>
-                         <div class="col-sm-8">
-                        <select class="form-control" id="waktu">
-                          <option>Semua</option>
-                          <option>Sudah Tersedia</option>
-                          <option>Akan Tersedia</option>
-                          <option>Infal</option>
-                          </select>
-                        </div>
-                      </div>
-                      <!--<div class="form-group">
-                        <label for="user-waktu" class="col-lg-3 control-label">Waktu ketersediaan</label>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control" id="user-waktu" placeholder="">
-                        </div>
-                      </div>-->
-                    </form>
-                    <div class="col-sm-6 col-md-4 col-md-offset-1" align="center">
-                      <a href="girls-3.jpg" class="thumbnail">
-                    <img src="girls-3.jpg" alt="girls-3"></img>
-                  </a>
-                    <div class="caption">
-                      <h5>Add your Pictures here</h5>
-                     <p><a href="#" class="btn btn-primary" role="button">Browse</a></p>
-                  </div>
-                  </div>
-                </div>
-                <hr>
-                            <!-- END WORKER PROFILE -->
-                <div class="col-lg-6 col-lg-offset-2">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <button type="submit" class="btn btn-primary">Cancel</button>
               </div>
-                        </div>
-                                      <br>
-                      </div>
-                      </div>
-                      <!-- END PAGE CONTENT WRAPPER -->
-                    </div>
-                    <!-- END PAGE CONTENT -->
+              <br>
+
+            </div>
+            <a href="#" class="btn btn-primary pull-right">
+              <span class="glyphicon glyphicon-filter"></span> Filter
+            </a>
+          </div>
+        </div>
+        <!--end of filter-->
+
+        <!--RESULTS-->
+        <div class="container">
+          <h3>Search Results:</h3>
+          <br>
+          <div class="container">
+            <div class="col-lg-4">
+              <img src="gadis_1.jpg" class="image-responsive" alt="image" style="max-height:30px;"></img>
+              <a href="" class="">Stefani</a>
+            </div>
+            <div class="col-lg-4">
+              <div class="container text-center">
+                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> Bogor</span>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <h5 class="title">Nanny</h5>
+            </div>
+          </div>
+          <hr>
+          <div class="container">
+            <div class="col-lg-4">
+              <img src="gadis_2.jpg" class="image-responsive" alt="image" style="max-height:30px;"></img>
+              <a href="" class="">Michele</a>
+            </div>
+            <div class="col-lg-4">
+              <div class="container text-center">
+                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"> Bogor</span>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <h5 class="title">Baby Sitter</h5>
+            </div>
+          </div>
+          <br>
+          <hr>
+        </div>
+
+        <!--/RESULTS-->
+        <div class="container">
+          <div class="row">
+            <form class="form-horizontal col-lg-5 col-sm-offset-1" ng-controller="laborPushController">              
+
+              <div class="form-group">
+                <label for="user-name" class="col-lg-3 control-label">Nama</label>
+                <div class="col-lg-8">
+                  <input type="text" class="form-control" id="inputNama" placeholder="Masukkan Nama Pekerja" required/>
                 </div>
-                <!-- END PAGE CONTAINER -->
-
-                <!-- LOG OUT MESSAGE BOX-->
-                <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
-                    <div class="mb-container">
-                        <div class="mb-middle">
-                            <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
-                            <div class="mb-content">
-                                <p>Are you sure you want to log out?</p>
-                                <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
-                            </div>
-                            <div class="mb-footer">
-                                <div class="pull-right">
-                                    <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
-                                    <button class="btn btn-default btn-lg mb-control-close">No</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="tanggal-lahir" class="col-lg-3 control-label">Tanggal Lahir</label>
+                <div class="col-lg-8">
+                  <input type="date" class="form-control" id="inputTanggal" max="2000-12-31" min="1900-01-01" required/>
                 </div>
-                <!-- LOG OUT END MESSAGE BOX-->
+              </div>
+              
+              <div class="form-group">
+                <label for="asal" class="col-lg-3 control-label">Asal/Tempat Lahir</label>
+                <div class="col-sm-8">
+                 <input type="text" class="form-control" id="inputAsal" placeholder="Masukkan Asal Pekerja" required/>       
+                </div>
+              </div>
+              ​
+              <div class="form-group">
+                <label for="user-address" class="col-lg-3 control-label">Alamat Lengkap</label>
+                <div class="col-lg-8">
+                  <textarea class="form-control" id="inputAlamat" rows="5" required></textarea>
+                </div>
+              </div>
+              ​
+              <div class="form-group">
+                <label for="lokasi-cabang" class="col-lg-3 control-label">Lokasi Cabang</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputLokasi" required ng-controller="branchViewController">
+                   <option value="">Select</option>
+                   <option ng-repeat="branch in branches">{{branch.kotamadya}}</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="kategori" class="col-lg-3 control-label">Kategori</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputKategori" required>
+                  <option value="">Select</option>
+                  <option>Rumah Tangga</option>
+                  <option>Pekerja Umum</option>
+                  <option>Pekerja Berketrampilan</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="profesi" class="col-lg-3 control-label">Profesi</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputProfesi" required>
+                  <option value="">Select</option>
+                  <option>PRT</option>
+                  <option>Nanny</option>
+                  <option>Baby Sitter</option>
+                  <option>Perawat Lansia</option>
+                  <option>Tukang Kebun</option>
+                  <option>Sopir</option>
+                  <option>Pekerja Beketrampilan</option>
+                  <option>Lainnya</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="gender" class="col-lg-3 control-label">Jenis Kelamin</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputGender" required>
+                  <option value="">Select</option>
+                  <option>Laki-laki</option>
+                  <option>Perempuan</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="waktu" class="col-lg-3 control-label">Waktu</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputWaktu" required>
+                  <option value="">Select</option>
+                  <option>Menginap</option>
+                  <option>Infal</option>
+                  <option>Pulang-pergi</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="pendidikan" class="col-lg-3 control-label">Pendidikan Terakhir</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputPend" required>
+                  <option value="">Select</option>
+                  <option>SD</option>
+                  <option>SMP</option>
+                  <option>SMA</option>
+                  <option>Perguruan Tinggi</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="status" class="col-lg-3 control-label">Status</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputStatus" required>
+                  <option value="">Select</option>
+                  <option>Lajang</option>
+                  <option>Menikah</option>
+                  <option>Janda/Duda</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="anak" class="col-lg-3 control-label">Anak</label>
+                <div class="col-sm-8">
+                  <input type="number" id="inputAnak" min="0" max="20" value="0"/>
+                </div>
+              </div>
+              ​
+              <div class="form-group">
+                <label for="telp" class="col-lg-3 control-label">Tel/Handphone</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputTelp" placeholder="Masukkan Nomor Telephone/Handphone" required/>
+                </div>
+              </div> ​
+
+              <div class="form-group">
+                <label for="agama" class="col-lg-3 control-label">Agama</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputAgama" required>
+                  <option value="">Select</option>
+                  <option>Islam</option>
+                  <option>Katolik</option>
+                  <option>Kristen</option>
+                  <option>Hindu</option>
+                  <option>Budha</option>
+                  <option>Lainnya</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="suku" class="col-lg-3 control-label">Suku</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputSuku" required>
+                  <option value="">Select</option>
+                  <option>Jawa</option>
+                  <option>Sunda</option>
+                  <option>Banten</option>
+                  <option>Batak</option>
+                  <option>Bali</option>
+                  <option>NTB/NTT</option>
+                  <option>Lampung</option>
+                  <option>Madura</option>
+                  <option>Melayu</option>
+                  <option>Lainnya</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="gaji" class="col-lg-3 control-label">Gaji</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control" id="inputGaji" min="50000" max="50000000" required/>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="ketrampilan" class="col-lg-3 control-label">Ketrampilan</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="inputKetrampilan" placeholder="Masukkan ketrampilan pekerja" required/>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="anjing" class="col-lg-3 control-label">Takut Anjing?</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputAnjing" required>
+                  <option value="">Select</option>
+                  <option>Ya</option>
+                  <option>Tidak</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="exp" class="col-lg-3 control-label">Pengalaman Kerja</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control" id="inputExp" min="0" max="50" required/> Tahun
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="expln" class="col-lg-3 control-label">Pengalaman kerja di luar negri?</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputExpln" required>
+                  <option value="">Select</option>
+                  <option>Ya</option>
+                  <option>Tidak</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="ing" class="col-lg-3 control-label">Bisa Bahasa Inggris?</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputIng" required>
+                  <option value="">Select</option>
+                  <option>Ya</option>
+                  <option>Tidak</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="tinggi" class="col-lg-3 control-label">Tinggi Badan</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control" id="inputTinggi" min="100" max="250" required/> Cm
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="berat" class="col-lg-3 control-label">Berat Badan</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control" id="inputBerat" min="20" max="200" required/> Kg
+                </div>
+              </div>
+              
+              
+              <div class="form-group">
+                <label for="halal" class="col-lg-3 control-label">Bisa Masak Non-halal?</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputHalal" required>
+                  <option value="">Select</option>
+                  <option>Ya</option>
+                  <option>Tidak</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="lembur" class="col-lg-3 control-label">Bersedia Lembur?</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="inputLembur" required>
+                  <option value="">Select</option>
+                  <option>Ya</option>
+                  <option>Tidak</option>
+                  </select>
+                </div>
+              </div>
+                                                                               
+             <!-- End Form -->
+            
+            <div class="col-sm-6 col-md-4 col-md-offset-1" align="center">
+              <a href="girls-3.jpg" class="thumbnail">
+                <img src="girls-3.jpg" alt="girls-3"/>
+              </a>
+              <div class="caption">
+                <h5>Add your Pictures here</h5>
+                <p><a href="#" class="btn btn-primary" role="button">Browse</a></p>
+              </div>
+            </div>
+            <hr>
+          <!-- END WORKER PROFILE -->
+          <div class="col-lg-6 col-lg-offset-2">
+            <button type="submit" class="btn btn-primary" id="btnSubmit">Save</button>
+            
+  <button type="cancel" class="btn btn-primary" onclick="this.form.reset()">Reset</button>
+          </div>
+            
+          </form> <!-- end form -->
+          
+        </div>
+        <br>
+      </div> <!-- end add container -->
+    </div>
+    <!-- END PAGE CONTENT WRAPPER -->
+  </div>
+  <!-- END PAGE CONTENT -->
+
+  <!-- END PAGE CONTAINER -->
+
+  <!-- LOG OUT MESSAGE BOX-->
+  <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+      <div class="mb-middle">
+        <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+        <div class="mb-content">
+          <p>Are you sure you want to log out?</p>
+          <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+        </div>
+        <div class="mb-footer">
+          <div class="pull-right">
+            <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+            <button class="btn btn-default btn-lg mb-control-close">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- LOG OUT END MESSAGE BOX-->
 
 
 
-    <!-- START SCRIPTS -->
-        <!-- START PLUGINS -->
-        <script type="text/javascript" src="./js/admin-js/plugins/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="./js/admin-js/plugins/jquery/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="./js/admin-js/plugins/bootstrap/bootstrap.min.js"></script>
-        <!-- END PLUGINS -->
+  <!-- START SCRIPTS -->
+  <!-- START PLUGINS -->
+  <script type="text/javascript" src="./js/admin-js/plugins/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/jquery/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- END PLUGINS -->
 
-        <!-- START THIS PAGE PLUGINS-->
-        <script type='text/javascript' src='./js/admin-js/plugins/icheck/icheck.min.js'></script>
-        <script type="text/javascript" src="./js/admin-js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-        <script type="text/javascript" src="./js/admin-js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+  <!-- START THIS PAGE PLUGINS-->
+  <script type="text/javascript" src='./js/admin-js/plugins/icheck/icheck.min.js'></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/scrolltotop/scrolltopcontrol.js"></script>
 
-        <script type="text/javascript" src="./js/admin-js/plugins/morris/raphael-min.js"></script>
-        <script type="text/javascript" src="./js/admin-js/plugins/morris/morris.min.js"></script>
-        <script type="text/javascript" src="./js/admin-js/plugins/rickshaw/d3.v3.js"></script>
-        <script type="text/javascript" src="./js/admin-js/plugins/rickshaw/rickshaw.min.js"></script>
-        <script type='text/javascript' src='./js/admin-js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
-        <script type='text/javascript' src='./js/admin-js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
-        <script type='text/javascript' src='./js/admin-js/plugins/bootstrap/bootstrap-datepicker.js'></script>
-        <script type="text/javascript" src="./js/admin-js/plugins/owl/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/morris/raphael-min.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/morris/morris.min.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/rickshaw/d3.v3.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/rickshaw/rickshaw.min.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/owl/owl.carousel.min.js"></script>
 
-        <script type="text/javascript" src="./js/admin-js/plugins/moment.min.js"></script>
-        <script type="text/javascript" src="./js/admin-js/plugins/daterangepicker/daterangepicker.js"></script>
-        <!-- END THIS PAGE PLUGINS-->
+  <script type="text/javascript" src="./js/admin-js/plugins/moment.min.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- END THIS PAGE PLUGINS-->
 
-        <!-- START TEMPLATE -->
-        <script type="text/javascript" src="./js/admin-js/settings.js"></script>
+  <!-- START TEMPLATE -->
+  <script type="text/javascript" src="./js/admin-js/settings.js"></script>
 
-        <script type="text/javascript" src="./js/admin-js/plugins.js"></script>
-        <script type="text/javascript" src="./js/admin-js/actions.js"></script>
+  <script type="text/javascript" src="./js/admin-js/plugins.js"></script>
+  <script type="text/javascript" src="./js/admin-js/actions.js"></script>
 
-        <script type="text/javascript" src="./js/admin-js/demo_dashboard.js"></script>
-        <!-- END TEMPLATE -->
-    <!-- END SCRIPTS -->
-  </body>
+  <script type="text/javascript" src="./js/admin-js/demo_dashboard.js"></script>
+  
+ <script type="text/javascript"> 
+ // $('#inputNama').alpha();
+ // $('#inputTelp').numeric(); 
+  </script> 
+  <!-- END TEMPLATE -->
+  <!-- END SCRIPTS -->
+</body>
+
 </html>

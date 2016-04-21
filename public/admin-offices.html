@@ -18,10 +18,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
         <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
         <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="./js/db.js"></script>
         
     </head>
-    <body ng-app="dbApp">
+    <body ng-app="mainApp">
     <!-- START PAGE CONTAINER -->
     <div class="page-container">
 
@@ -87,7 +88,7 @@
                       <div class="row">
                             <div class="col-xs-10">
 
-                                <form ng-controller="branchController" ng-submit="addGroup(newGroup)" class="form-horizontal">
+                                <form ng-controller="branchPushController" class="form-horizontal">
 
                                     <div class="panel panel-default tabs" style="max-height; 400px; overflow; auto;">
                                         <ul class="nav nav-tabs" role="tablist">
@@ -102,35 +103,35 @@
                                                 <div class="form-group">
                                                     <label class="col-md-3 col-xs-12 control-label">Kotamadya</label>
                                                     <div class="col-md-6 col-xs-12">
-                                                        <input type="text" class="form-control" id="kotamadya" placeholder="Ex: Jakarta Pusat" ng-model="newGroup.kotamadya"></input>
+                                                        <input type="text" class="form-control" id="inputKodya" placeholder="Ex: Jakarta Pusat" required/>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="col-md-3 col-xs-12 control-label">Kantor</label>
                                                     <div class="col-md-6 col-xs-12">
-                                                        <input type="text" class="form-control" ng-model="newGroup.nama" placeholder="Nama Kantor"/>
+                                                        <input type="text" class="form-control" id="inputNama" placeholder="Nama Kantor" required/>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="col-md-3 col-xs-12 control-label">Alamat</label>
                                                     <div class="col-md-6 col-xs-12">
-                                                        <textarea class="form-control" id="alamat" rows="3" ng-model="newGroup.alamat" placeholder="Alamat Baru"/></textarea>
+                                                        <textarea class="form-control" rows="3" id="inputAlamat" placeholder="Alamat Baru" required></textarea>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label class="col-md-3 col-xs-12 control-label">No. Telp</label>
                                                     <div class="col-md-6 col-xs-12">
-                                                        <input type="text" class="form-control" ng-model="newGroup.telp" placeholder="Nomor Telepon"/>
+                                                        <input type="text" class="form-control" id="inputTelp" placeholder="Nomor Telepon" required/>
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="col-xs-9">
-                                                <a href="#" class="btn btn-primary pull-right">
-                                                Add Address
-                                                </a>
+                                                    <button type="submit" id="btUpdateMessage" class="btn btn-primary pull-right">
+                                                        Add Address
+                                                    </button>
                                                 </div>
                                             </div>
 
@@ -140,7 +141,7 @@
                                                 <div class="form-group">
                                                     <label class="col-md-3 col-xs-12 control-label">Kotamadya</label>
                                                     <div class="col-md-6 col-xs-12">
-                                                        <p type="text" class="form-control" id="kotamadya" placeholder="Kotamadya"/>Jakarta Pusat</p>
+                                                        <p type="text" class="form-control" id="kodya" placeholder="Kotamadya"/>Jakarta Pusat</p>
                                                     </div>
                                                 </div>
 
@@ -154,7 +155,7 @@
                                                 <div class="form-group">
                                                     <label class="col-md-3 col-xs-12 control-label">Alamat</label>
                                                     <div class="col-md-6 col-xs-12">
-                                                        <textarea class="form-control" id="alamat" rows="3" placeholder="Alamat Baru"/></textarea>
+                                                        <textarea class="form-control" id="alamatkans" rows="3" placeholder="Alamat Baru"/>
                                                     </div>
                                                 </div>
 
@@ -172,9 +173,9 @@
                                                 </div>
                                                 
                                                 <div class="col-xs-5">
-                                                <button type="submit" href="#" class="btn btn-primary pull-right">
+                                                <button type="submit" href="#" class="btn btn-primary pull-right"/>
                                                 Add Address
-                                                </a>
+                                                
                                                 </div>
                                                 
                                             </div>
@@ -226,7 +227,7 @@
         <!-- END PLUGINS -->
 
         <!-- START THIS PAGE PLUGINS-->
-        <script type='text/javascript' src='./js/admin-js/plugins/icheck/icheck.min.js'></script>
+        <script type="text/javascript" src='./js/admin-js/plugins/icheck/icheck.min.js'></script>
         <script type="text/javascript" src="./js/admin-js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
         <script type="text/javascript" src="./js/admin-js/plugins/scrolltotop/scrolltopcontrol.js"></script>
 
@@ -234,9 +235,9 @@
         <script type="text/javascript" src="./js/admin-js/plugins/morris/morris.min.js"></script>
         <script type="text/javascript" src="./js/admin-js/plugins/rickshaw/d3.v3.js"></script>
         <script type="text/javascript" src="./js/admin-js/plugins/rickshaw/rickshaw.min.js"></script>
-        <script type='text/javascript' src='./js/admin-js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
-        <script type='text/javascript' src='./js/admin-js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
-        <script type='text/javascript' src='./js/admin-js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+        <script type="text/javascript" src='./js/admin-js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
+        <script type="text/javascript" src='./js/admin-js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
+        <script type="text/javascript" src='./js/admin-js/plugins/bootstrap/bootstrap-datepicker.js'></script>
         <script type="text/javascript" src="./js/admin-js/plugins/owl/owl.carousel.min.js"></script>
 
         <script type="text/javascript" src="./js/admin-js/plugins/moment.min.js"></script>
