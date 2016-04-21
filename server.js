@@ -49,9 +49,9 @@ app.get('/', function(req, res) {
 //     res.sendFile(__dirname + '/public/register.html');
 // });
 
-// app.get('/login', function(req, res) {
-//     res.sendFile(__dirname + '/public/pages-login.html');
-// });
+app.get('/login', function(req, res) {
+    res.sendFile(__dirname + '/public/admin/pages-login-inside.html');
+});
 
 // express server - change port to whatever as needed
 app.listen(process.env.PORT, function(err){
