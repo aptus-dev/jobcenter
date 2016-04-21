@@ -1,4 +1,4 @@
-var app = angular.module('authApp', ['firebase']);
+var app = angular.module('mainApp', ['firebase']);
 
 // // let's create a re-usable factory that generates the $firebaseAuth instance
 // app.factory("Auth", ["$firebaseAuth",

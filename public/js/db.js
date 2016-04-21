@@ -1,4 +1,4 @@
-var db = angular.module("dbApp", ["firebase"]);
+var db = angular.module("mainApp", ["firebase"]);
 
 var URL = "https://jobcenter.firebaseio.com/";
 
@@ -16,7 +16,7 @@ db.controller("searchController", function($scope, $firebaseArray) {
     }
   };
   
-});
+}); //end of searchController
 
 db.controller("profileViewController", function ($scope, $firebaseArray) {
 
@@ -45,9 +45,7 @@ db.controller("profileViewController", function ($scope, $firebaseArray) {
     }
   });
 
-  /*var query = ref.orderByChild();
-  
-  */
+  //var query = ref.orderByChild();
 
   //download data into a local object
   //var syncObject = $firebaseObject(ref);
@@ -65,9 +63,80 @@ db.controller("branchViewController", function($scope, $firebaseArray) {
 
 db.controller("laborPushController", function ($scope, $firebaseArray) {
   
-  var pushRef = new Firebase(URL + 'labor');
-//  var laborRef = pushRef.child("labor");
-  //push data into database with unique id
+  var ref = new Firebase(URL + 'labor');
+  var inputNama = document.getElementById('inputNama');
+  var inputTanggal = document.getElementById('inputTanggal');
+  var inputAsal = document.getElementById('inputAsal');
+  var inputAlamat = document.getElementById('inputAlamat');
+  var inputLokasi = document.getElementById('inputLokasi');
+  var inputKategori = document.getElementById('inputKategori');
+  var inputProfesi = document.getElementById('inputProfesi');
+  //var tersedia = "Ya";
+  var inputGender = document.getElementById('inputGender');
+  var inputWaktu = document.getElementById('inputWaktu');
+  var inputPend = document.getElementById('inputPend');
+  var inputStatus = document.getElementById('inputStatus');
+  var inputAnak = document.getElementById('inputAnak');
+  var inputTelp = document.getElementById('inputTelp');
+  var inputAgama = document.getElementById('inputAgama');
+  var inputSuku = document.getElementById('inputSuku');
+  var inputGaji = document.getElementById('inputGaji');
+  var inputKetrampilan = document.getElementById('inputKetrampilan');
+  var inputAnjing = document.getElementById('inputAnjing');
+  var inputExp = document.getElementById('inputExp');
+  var inputExpln = document.getElementById('inputExpln');
+  var inputIng = document.getElementById('inputIng');
+  var inputTinggi = document.getElementById('inputTinggi');
+  var inputBerat = document.getElementById('inputBerat');
+  var inputHalal = document.getElementById('inputHalal');
+  var inputLembur = document.getElementById('inputLembur');
+  
+  var btnSubmit = document.getElementById('btnSubmit');
+
+        btnSubmit.addEventListener('click', function () {
+            ref.push({
+              nama: inputNama.value,
+              tanggallahir: inputTanggal.value,
+              asal: inputAsal.value,      
+              alamat: inputAlamat.value,
+              lokasi: inputLokasi.value,
+              kategori: inputKategori.value,
+              profesi: inputProfesi.value,
+              tersedia: "ya",
+              gender: inputGender.value,
+              waktu: inputWaktu.value,
+              pendidikan: inputPend.value,
+              status: inputStatus.value,
+              anak: inputAnak.value,              
+              telp: inputTelp.value,
+              agama: inputAgama.value,
+              suku: inputSuku.value,
+              gaji: inputGaji.value,
+              ketrampilan: inputKetrampilan.value,
+              anjing: inputAnjing.value,
+              exp: inputExp.value,
+              luarnegri: inputExpln.value,
+              inggris: inputIng.value,
+              tinggi: inputTinggi.value,
+              berat: inputBerat.value,
+              nonhalal: inputHalal.value,
+              lembur: inputLembur.value
+              
+            });
+        });
+            
+            //ref2.child().push([inputKodya.value]);     
+                   
+            // inputNama.value = '';
+            // inputTanggal.value = '';            
+            // inputAlamat.value = '';
+            // inputKodya.value = '';
+            // inputTelp.value = '';
+
+        });
+      //end of branch push controller
+
+  /* push data into database with unique id
   pushRef.push({
     "nama": "Maryati",
     "tanggallahir": "27/04/1985",
@@ -96,27 +165,58 @@ db.controller("laborPushController", function ($scope, $firebaseArray) {
     "non-halal": "ya",
     "lembur": "ya"
   });
-
-}); //end of db push controller
+*/
+ //end of labor push controller
 
 db.controller("branchPushController", function () {
   
   var ref = new Firebase(URL + 'branch');
-  this.review = {};
-  this.add = function(ref){
-    ref.push(this.review);
-    this.review = {};
-  };
-//  var branchRef = ref.child("branch");
+  var ref2 = new Firebase(URL + 'lokasi');
+
+  var inputNama = document.getElementById('inputNama');
+  var inputAlamat = document.getElementById('inputAlamat');
+  var inputKodya = document.getElementById('inputKodya');
+  var inputTelp = document.getElementById('inputTelp');
+  var btUpdateMessage = document.getElementById('btUpdateMessage');
+
+        btUpdateMessage.addEventListener('click', function () {
+            ref.push({
+              nama: inputNama.value,
+              alamat: inputAlamat.value,
+              telp: inputTelp.value,
+              kotamadya: inputKodya.value
+            });
+            
+            //ref2.child().push([inputKodya.value]);     
+                   
+            inputNama.value = '';
+            inputAlamat.value = '';
+            inputKodya.value = '';
+            inputTelp.value = '';
+
+        });
+      }); //end of branch push controller
+  
+  // var nama = $('#nameInput').val();
+  // var alamat = $('#alamatInput').val();
+  // var kotamadya = $('#kodyaInput').val();
+  // var telp = $('#telpInput').val();
+  
+  // this.review = {};
+  // this.add = function(ref){
+  //   ref.push(this.review);
+  //   this.review = {};
+  // };
+  //  var branchRef = ref.child("branch");
+
   //push data into database with unique id
-/*  ref.push({
-    "nama": "Kantor Pusat Jakarta",
-    "alamat": "Jl. Wolter Monginsidi no. 72",
-    "kotamadya": "Jakarta Selatan",
-    "telp": "021-4506586",
-  });
-*/
-}); //end of branch push controller
+  // ref.push({
+  //   nama: nama,
+  //   alamat: alamat,
+  //   kotamadya: kotamadya,
+  //   telp: telp
+  // });
+
 
 /* push() function
 
